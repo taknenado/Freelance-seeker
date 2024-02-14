@@ -18,7 +18,7 @@ $sql = "CREATE TABLE IF NOT EXISTS users (
     phone VARCHAR(20) NOT NULL,
     gender ENUM('Мужской', 'Женский') NOT NULL,
     birthdate DATE NOT NULL,
-    user_type ENUM('regular', 'admin') NOT NULL
+    user_type ENUM('Фрилансер', 'Работодатель') NOT NULL
 )";
 
 if ($conn->query($sql) === TRUE || $conn->query($sql) === FALSE) {
@@ -55,7 +55,7 @@ if ($conn->query($sql) === TRUE || $conn->query($sql) === FALSE) {
     $phone = $_POST['phone'];
     $gender = $_POST['gender'];
     $birthdate = $_POST['birthdate'];
-    $user_type = 'regular'; // Предполагая, что обычный пользователь (не администратор)
+    $user_type = 'Фрилансер'; // Предполагая, что обычный пользователь (не администратор)
 
     // Подготовка SQL-запроса с использованием подготовленных выражений
     $stmt = $conn->prepare("INSERT INTO users (username, email, password, phone, gender, birthdate, user_type) VALUES (?, ?, ?, ?, ?, ?, ?)");

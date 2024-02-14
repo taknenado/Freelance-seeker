@@ -53,8 +53,8 @@
             <input type="date" id="birthdate" name="birthdate" required>
             
             <label for="user_type">Тип пользователя:</label>
-            <label><input type="radio" id="freelancer" name="user_type" value="freelancer" required>Фрилансер</label>
-            <label><input type="radio" id="employer" name="user_type" value="employer">Работодатель</label>
+            <label><input type="radio" id="freelancer" name="user_type" value="Фрилансер" required>Фрилансер</label>
+            <label><input type="radio" id="employer" name="user_type" value="Работодатель">Работодатель</label>
             
             <input type="submit" value="Зарегистрироваться">
         </form>

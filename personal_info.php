@@ -44,7 +44,7 @@ if ($user_id) {
         echo "<p><strong>Никнейм:</strong> $username</p>";
         echo "<p><strong>Почта:</strong> $email</p>";
         echo "<p><strong>Номер телефона:</strong> $phone</p>";
-        echo "<p><strong>Гендер:</strong> $gender</p>";
+        echo "<p><strong>Пол:</strong> $gender</p>";
         echo "<p><strong>Тип пользователя:</strong> $user_type</p>";
 
         // Вывод кнопки "Выйти"
