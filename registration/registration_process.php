@@ -1,6 +1,4 @@
 <?php
-// Получение данных из формы регистрации и другая логика...
-
 // Создание подключения к базе данных
 require_once("../DB_config.php");
 
@@ -9,32 +7,6 @@ $conn = new mysqli($hostname, $username, $password, $database);
 // Проверка соединения
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}
-
-// Проверка уникальности почты или никнейма
-$email = $_POST['email'];
-$username = $_POST['username'];
-
-// Проверка почты
-$sql = "SELECT * FROM users WHERE email = '$email'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // Адрес электронной почты уже используется
-    header("Location: register.php?error=email_exists");
-    $conn->close();
-    exit();
-}
-
-// Проверка никнейма
-$sql = "SELECT * FROM users WHERE username = '$username'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // Никнейм уже используется
-    header("Location: register.php?error=username_exists");
-    $conn->close();
-    exit();
 }
 
 // Создание таблицы "users", если она не существует
@@ -49,8 +21,34 @@ $sql = "CREATE TABLE IF NOT EXISTS users (
     user_type ENUM('regular', 'admin') NOT NULL
 )";
 
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql) === TRUE || $conn->query($sql) === FALSE) {
     // Таблица "users" создана успешно или уже существует
+
+    // Проверка уникальности почты или никнейма
+    $email = $_POST['email'];
+    $username = $_POST['username'];
+
+    // Проверка почты
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // Адрес электронной почты уже используется
+        header("Location: register.php?error=email_exists");
+        $conn->close();
+        exit();
+    }
+
+    // Проверка никнейма
+    $sql = "SELECT * FROM users WHERE username = '$username'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // Никнейм уже используется
+        header("Location: register.php?error=username_exists");
+        $conn->close();
+        exit();
+    }
 
     // Добавление данных пользователя в таблицу "users"
     $password = $_POST['password'];
