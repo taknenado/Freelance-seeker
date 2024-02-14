@@ -2,7 +2,9 @@
 // Получение данных из формы регистрации и другая логика...
 
 // Создание подключения к базе данных
-$conn = new mysqli("localhost", "root", "", "account_registration");
+require_once("../DB_config.php");
+
+$conn = new mysqli($hostname, $username, $password, $database);
 
 // Проверка соединения
 if ($conn->connect_error) {
@@ -30,19 +32,19 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // Никнейм уже используется
-    echo "Никнейм уже зарегистрирован.";
+    header("Location: register.php?error=username_exists");
     $conn->close();
     exit();
 }
 
 // Создание таблицы "users", если она не существует
 $sql = "CREATE TABLE IF NOT EXISTS users (
-    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    user_id INT(11) AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL,
     password VARCHAR(255) NOT NULL,
     phone VARCHAR(20) NOT NULL,
-    gender ENUM('male', 'female') NOT NULL,
+    gender ENUM('Мужской', 'Женский') NOT NULL,
     birthdate DATE NOT NULL,
     user_type ENUM('regular', 'admin') NOT NULL
 )";
@@ -64,9 +66,31 @@ if ($conn->query($sql) === TRUE) {
     if ($stmt->execute()) {
         // Данные пользователя успешно добавлены в таблицу "users"
 
-        // Перенаправление на страницу успешной регистрации
-        header('Location: registration_success.php');
-        exit();
+        // Вывод страницы успешной регистрации
+        echo "
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Регистрация успешна</title>
+            <style>
+                body {
+                    text-align: center;
+                }
+                
+                h1 {
+                    text-transform: uppercase;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>РЕГИСТРАЦИЯ УСПЕШНА!</h1>
+            <p>Поздравляем! Вы успешно зарегистрированы.</p>
+            <p>Теперь вы можете войти на свою учетную запись.</p>
+            <form action='../index.php'>
+                <input type='submit' value='Вернуться на главную страницу'>
+            </form>
+        </body>
+        </html>";
     } else {
         // Ошибка при добавлении данных пользователя
         echo "Ошибка при добавлении данных пользователя: " . $stmt->error;
