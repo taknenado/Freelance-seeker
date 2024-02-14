@@ -46,8 +46,8 @@
             <input type="tel" id="phone" name="phone" required>
             
             <label for="gender">Пол:</label>
-            <label><input type="radio" id="male" name="gender" value="male" required>Мужской</label>
-            <label><input type="radio" id="female" name="gender" value="female">Женский</label>
+            <label><input type="radio" id="male" name="gender" value="Мужской" required>Мужской</label>
+            <label><input type="radio" id="female" name="gender" value="Женский">Женский</label>
             
             <label for="birthdate">Дата рождения:</label>
             <input type="date" id="birthdate" name="birthdate" required>
