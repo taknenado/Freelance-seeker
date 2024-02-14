@@ -1,11 +1,7 @@
 <?php
-// Подключение к базе данных
-$host = "localhost";
-$username = "root";
-$password = "";
-$dbname = "account_registration";
+require_once("DB_config.php");
 
-$conn = new mysqli($host, $username, $password, $dbname);
+$conn = new mysqli($hostname, $username, $password, $database);
 if ($conn->connect_error) {
   die("Ошибка подключения к базе данных: " . $conn->connect_error);
 }
@@ -29,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["username"] = $username;
     // Дополнительные действия после успешного входа
     // ...
-    header("Location: dashboard.php");
+    header("Location: user_page.php");
     exit();
   } else {
     // Если пользователь не найден или введены неверные учетные данные, перенаправить обратно на страницу входа с сообщением об ошибке
