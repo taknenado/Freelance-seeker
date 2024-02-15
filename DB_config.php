@@ -5,8 +5,8 @@ $username = "root";
 $password = "";
 $database = "account_registration";
 
-$conn = new mysqli($hostname, $username, $password, $database);
-if ($conn->connect_error) {
-  die("Ошибка подключения к базе данных: " . $conn->connect_error);
+$connection = mysqli_connect($hostname, $username, $password, $database);
+if (!$connection) {
+  die("Ошибка подключения к базе данных: " . mysqli_connect_error());
 }
 ?>
