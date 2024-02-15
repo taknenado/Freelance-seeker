@@ -8,10 +8,10 @@
 </head>
 <body>
 <?php
+
+require_once("check_auth.php");
 require_once("DB_config.php");
-
-
-session_start();
+require_once("get_UserID.php");
 
 $user_id = $_SESSION['user_id'] ?? null;
 
