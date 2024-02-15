@@ -10,13 +10,6 @@
 <?php
 require_once("DB_config.php");
 
-// Создание соединения с базой данных
-$connection = mysqli_connect($hostname, $username, $password, $database);
-
-// Проверка соединения
-if (!$connection) {
-    die("Ошибка подключения: " . mysqli_connect_error());
-}
 
 session_start();
 

@@ -1,11 +1,6 @@
 <?php
 require_once("DB_config.php");
 
-$conn = new mysqli($hostname, $username, $password, $database);
-if ($conn->connect_error) {
-  die("Ошибка подключения к базе данных: " . $conn->connect_error);
-}
-
 // Проверка, была ли отправлена форма
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Получение введенных пользователем данных
