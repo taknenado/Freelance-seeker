@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Проверка, существует ли пользователь с введенным именем пользователя и паролем в базе данных
   $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-  $result = $conn->query($sql);
+  $result = $connection->query($sql);
 
   if ($result->num_rows == 1) {
     // Пользователь аутентифицирован, выполнить вход

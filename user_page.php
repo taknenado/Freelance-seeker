@@ -1,5 +1,5 @@
 <?php
-require_once('auth_check.php');
+require_once('check_auth.php');
 ?>
 <!DOCTYPE html>
 <html>
