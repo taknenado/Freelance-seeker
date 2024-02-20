@@ -47,19 +47,14 @@
         ?>
 
         <form action="registration_process.php" method="POST" class="center">
-            <label for="username">Имя пользователя:</label>
             <input type="text" id="username" name="username" required placeholder="Логин">
 
-            <label for="email">Электронная почта:</label>
             <input type="email" id="email" name="email" required placeholder="Почта">
 
-            <label for="password">Пароль:</label>
             <input type="password" id="password" name="password" required placeholder="Пароль">
 
-            <label for="confirm_password">Повторите пароль:</label>
             <input type="password" id="confirm_password" name="confirm_password" required placeholder="Повторите пароль">
 
-            <label for="phone">Номер телефона:</label>
             <input type="text" id="phone" name="phone" required placeholder="+7 (___) ___-__-__">
 
             <label for="birthdate">Дата рождения:</label>
