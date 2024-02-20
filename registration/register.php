@@ -46,15 +46,15 @@
             <input type="tel" id="phone" name="phone" required>
             
             <label for="gender">Пол:</label>
-            <label><input type="radio" id="male" name="gender" value="Мужской" required>Мужской</label>
-            <label><input type="radio" id="female" name="gender" value="Женский">Женский</label>
+            <label><input type="radio" id="male" name="gender" value="male" required>Мужской</label>
+            <label><input type="radio" id="female" name="gender" value="female">Женский</label>
             
             <label for="birthdate">Дата рождения:</label>
             <input type="date" id="birthdate" name="birthdate" required>
             
             <label for="user_type">Тип пользователя:</label>
-            <label><input type="radio" id="freelancer" name="user_type" value="Фрилансер" required>Фрилансер</label>
-            <label><input type="radio" id="employer" name="user_type" value="Работодатель">Работодатель</label>
+            <label><input type="radio" id="freelancer" name="user_type" value="freelanser" required>Фрилансер</label>
+            <label><input type="radio" id="employer" name="user_type" value="employer">Работодатель</label>
             
             <input type="submit" value="Зарегистрироваться">
         </form>
