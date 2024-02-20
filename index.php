@@ -5,10 +5,9 @@
     <title>Мой сайт</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav_menu.css">
-
+    <!-- <script src="js/script.js"></script> -->
 
     <style>
-        /* Стили для вашей страницы */
         body {
             background-color: #f5f5f5;
             font-family: Arial, sans-serif;
@@ -61,14 +60,17 @@
     
 </head>
 <body>
-    <header>
+<header>
         <nav class="nav-menu">
-            <ul>
-                <li><a href="index.php">Главная</a></li>
+            <a href="index.php" class="logo">Your Logo</a>
+            <ul class="nav-menu">
                 <li><a href="about.php">О нас</a></li>
                 <li><a href="services.php">Услуги</a></li>
                 <li><a href="contact.php">Контакты</a></li>
-                <li class="right-align"><a href="login.php" class="button">Войти</a></li>
+            </ul> 
+            <ul>   
+            <li><a href="login.php" class="button login-button">Войти</a></li>
+            <li><a href="registration/register.php" class="button register-button">Зарегестрироваться</a></li>
             </ul>
         </nav>
     </header>
@@ -77,8 +79,6 @@
         <div class="container">
             <h1>Фрилансеры и Заказчики</h2>
             <p>Мы предоставляем платформу для встречи фрилансеров и заказчиков.</p>
-            <a href="registration/register.php" class="button">Зарегестрироваться</a>
-            
         </div>
     </main>
 

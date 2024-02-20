@@ -1,32 +1,38 @@
 .nav-menu {
-    background-color: #333;
-    padding: 10px;
+  background-color: #333;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .nav-menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-    grid-gap: 10px;
-    justify-items: center;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Добавлено для центрирования */
 }
 
 .nav-menu li {
-    display: inline-block;
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center; /* Добавлено для центрирования */
 }
 
 .nav-menu a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
 }
 
-.nav-menu .right-align {
-    justify-self: end;
-}
 
 .nav-menu a:hover {
-    background-color: #555;
+  background-color: #555;
 }

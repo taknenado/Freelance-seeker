@@ -32,14 +32,16 @@ require_once('check_auth.php');
     </style>
 </head>
 <body>
-<header>
+    <header>
         <nav class="nav-menu">
-            <ul>
-                <li><a href="user_page.php">Главная</a></li>
+            <a href="index.php" class="logo">Your Logo</a>
+            <ul class="nav-menu">
                 <li><a href="about.php">О нас</a></li>
                 <li><a href="services.php">Услуги</a></li>
                 <li><a href="contact.php">Контакты</a></li>
-                <li class="right-align"><a href="personal_info.php" class="button userinfo_button">Личный кабинет</a></li>
+            </ul> 
+            <ul>   
+            <li class="right-align"><a href="personal_info.php" class="button userinfo_button">Личный кабинет</a></li>
             </ul>
         </nav>
     </header>

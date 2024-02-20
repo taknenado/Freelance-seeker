@@ -3,6 +3,7 @@
 <head>
   <title>Вход</title>
   <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/login_style.css"> -->
   <link rel="stylesheet" href="css/reg_log_style.css">
 </head>
 
@@ -24,11 +25,9 @@
     ?>
 
     <form action="login_process.php" method="POST" class="center">
-      <label for="username">Имя пользователя:</label>
-      <input type="text" id="username" name="username" required>
+      <input type="text" id="username" name="username" required placeholder="Логин">
 
-      <label for="password">Пароль:</label>
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="password" name="password" required placeholder="Пароль">
 
       <button type="submit" class="button">Войти</button>
     </form>
