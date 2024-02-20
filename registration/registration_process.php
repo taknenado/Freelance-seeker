@@ -55,7 +55,7 @@ if ($conn->query($sql) === TRUE || $conn->query($sql) === FALSE) {
     $phone = $_POST['phone'];
     $gender = $_POST['gender'];
     $birthdate = $_POST['birthdate'];
-    $user_type = 'Фрилансер'; // Предполагая, что обычный пользователь (не администратор)
+    $user_type = 'freelanser'; // Предполагая, что обычный пользователь (не администратор)
 
     // Подготовка SQL-запроса с использованием подготовленных выражений
     $stmt = $conn->prepare("INSERT INTO users (username, email, password, phone, gender, birthdate, user_type) VALUES (?, ?, ?, ?, ?, ?, ?)");

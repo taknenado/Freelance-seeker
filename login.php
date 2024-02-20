@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Вход</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/reg_log_style.css">
 </head>
 

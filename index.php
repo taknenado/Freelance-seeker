@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Мой сайт</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav_menu.css">
+
 
     <style>
         /* Стили для вашей страницы */
@@ -56,10 +58,19 @@
             margin-right: 5px;
         }
     </style>
+    
 </head>
 <body>
     <header>
-        <!-- Здесь может быть ваш заголовок или навигационное меню -->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.php">Главная</a></li>
+                <li><a href="about.php">О нас</a></li>
+                <li><a href="services.php">Услуги</a></li>
+                <li><a href="contact.php">Контакты</a></li>
+                <li class="right-align"><a href="login.php" class="button">Войти</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -67,7 +78,7 @@
             <h1>Фрилансеры и Заказчики</h2>
             <p>Мы предоставляем платформу для встречи фрилансеров и заказчиков.</p>
             <a href="registration/register.php" class="button">Зарегестрироваться</a>
-            <a href="login.php" class="button">Войти</a>
+            
         </div>
     </main>
 
