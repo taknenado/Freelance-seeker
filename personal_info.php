@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Личный кабинет</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav_menu.css">
 </head>
 <body>
+<header>
+        <nav class="nav-menu">
+            <a href="index.php" class="logo">Your Logo</a>
+            <ul class="nav-menu">
+                <li><a href="about.php">О нас</a></li>
+                <li><a href="services.php">Услуги</a></li>
+                <li><a href="contact.php">Контакты</a></li>
+            </ul> 
+            <ul>   
+            <li><a href="logout.php" class="logout_button button-container">Выйти</a></li>
+            </ul>
+        </nav>
+    </header>
 <?php
 
 require_once("check_auth.php");
@@ -40,8 +55,6 @@ if ($user_id) {
         echo "<p><strong>Пол:</strong> $gender</p>";
         echo "<p><strong>Тип пользователя:</strong> $user_type</p>";
 
-        // Вывод кнопки "Выйти"
-        echo '<a href="logout.php" class="logout_button button-container">Выйти</a>';
     } else {
         // Обработка случая, когда данные пользователя не найдены
         echo "Данные пользователя не найдены.";
@@ -54,5 +67,6 @@ if ($user_id) {
 // Закрываем соединение с базой данных
 mysqli_close($connection);
 ?>
+
 </body>
 </html>

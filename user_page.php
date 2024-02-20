@@ -41,7 +41,7 @@ require_once('check_auth.php');
                 <li><a href="contact.php">Контакты</a></li>
             </ul> 
             <ul>   
-            <li class="right-align"><a href="personal_info.php" class="button userinfo_button">Личный кабинет</a></li>
+            <li class="right-align"><a href="personal_info.php" class="button userinfo_button"><?php echo $_SESSION['username']; ?></a></li>
             </ul>
         </nav>
     </header>

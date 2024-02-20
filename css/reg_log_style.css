@@ -9,13 +9,9 @@ body {
   background-color: #222;
   padding: 20px;
   max-width: 400px;
-  margin: 100px auto;
+  margin: 30px auto;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.button-container {
-  text-align: right;
 }
 
 .button {
@@ -67,6 +63,7 @@ form label {
 }
 
 form input[type="text"],
+form input[type="email"],
 form input[type="password"] {
   width: 100%;
   padding: 10px;
@@ -81,6 +78,7 @@ form button[type="submit"] {
   margin-top: 20px;
   width: 100%;
 }
+
 
 
 
