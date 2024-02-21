@@ -20,9 +20,34 @@
         .button-container button:hover {
             background-color: #45a049;
         }
+        .error-message {
+            color: red;
+            margin-top: 5px;
+            display: none; /* Скрыть сообщение об ошибке по умолчанию */
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#phone").mask("+7 (999) 999-99-99");
+
+            $("#confirm_password").on("input", function() {
+                var password = $("#password").val();
+                var confirm_password = $(this).val();
+
+                if (confirm_password.length > 0) { // Проверка, что поле не пустое
+                    if (password === confirm_password) {
+                        $("#password_error").hide(); // Скрыть сообщение об ошибке
+                    } else {
+                        $("#password_error").show(); // Показать сообщение об ошибке
+                    }
+                } else {
+                    $("#password_error").hide(); // Скрыть сообщение об ошибке
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -54,6 +79,7 @@
             <input type="password" id="password" name="password" required placeholder="Пароль">
 
             <input type="password" id="confirm_password" name="confirm_password" required placeholder="Повторите пароль">
+            <p id="password_error" class="error-message">Пароли не совпадают</p>
 
             <input type="text" id="phone" name="phone" required placeholder="+7 (___) ___-__-__">
 
@@ -77,15 +103,9 @@
                 <button type="submit">Зарегистрироваться</button>
             </div>
         </form>
-        <div class="center">
+       <div class="center">
             <p>Уже есть аккаунт? <a href="../login.php">Войти</a></p>
         </div>
     </main>
-    <script>
-        // Применение маски ввода для номера телефона
-        $(document).ready(function() {
-            $("#phone").mask("+7 (999) 999-99-99");
-        });
-    </script>
 </body>
 </html>
