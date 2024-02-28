@@ -4,8 +4,9 @@ require_once('check_auth.php');
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница пользователя</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav_menu.css">
     
@@ -36,9 +37,11 @@ require_once('check_auth.php');
         <nav class="nav-menu">
             <a href="index.php" class="logo">Your Logo</a>
             <ul class="nav-menu">
-                <li><a href="about.php">О нас</a></li>
-                <li><a href="services.php">Услуги</a></li>
-                <li><a href="contact.php">Контакты</a></li>
+            <li><a href="about.php">ЗАКАЗЫ</a></li>
+            <li><a href="services.php">ФРИЛАНСЕРЫ</a></li>
+            <li><a href="contact.php">ПОРТФОЛИО</a></li>
+            <li><a href="contact.php">УСЛУГИ</a></li>
+            <li><a href="contact.php">ВАКАНСИИ</a></li>
             </ul> 
             <ul>   
             <li class="right-align"><a href="personal_info.php" class="button userinfo_button"><?php echo $_SESSION['username']; ?></a></li>
