@@ -115,7 +115,7 @@
 .x10 {
 	font-size: 18px;
 	font-family: 'OpenSansBold', Arial;
-	color: #15A0A5;
+	color: #007bff;
 	margin-bottom: 10px;
 }
 
@@ -154,7 +154,7 @@
 }
 
 .x15 {
-	color: #15A0A5;
+	color: #007bff;
 	font-family: 'OpenSansBold', Arial;
 }
 
@@ -179,7 +179,7 @@
 .x18 {
 	font-size: 12px;
 	font-family: 'OpenSansRegular', Arial;
-	color: #15A0A5;
+	color: #007bff;
 }
 
 .x19 {
@@ -197,7 +197,7 @@
 .x21 {
 	font-style: 1px;
 	height: 5px;
-	background-color: #15A0A5;
+	background-color: #007bff;
 }
 
 .x22 {
@@ -227,7 +227,7 @@
 .x24 {
 	font-size: 30px;
 	font-family: 'OpenSansBold', Arial;
-	color: #15A0A5;
+	color: #007bff;
 	text-align: center;
 	line-height: 30px;
 	padding-bottom: 16px;
@@ -585,7 +585,7 @@
 	text-align: center;
 	margin-right: 6px;
 	width: 160px;
-	background-color: #15A0A5;
+	background-color: #007bff;
 	padding: 10px;
 	font-family: 'OpenSansBold', Arial;
 	color: #fff;
@@ -608,7 +608,7 @@
 	text-align: center;
 	margin-right: 6px;
 	width: 195px;
-	background-color: #15A0A5;
+	background-color: #007bff;
 	padding: 10px;
 	font-family: 'OpenSansBold', Arial;
 	color: #fff;
@@ -1003,7 +1003,7 @@ input[type="file"] {
 .btn2 {
 	cursor: pointer;
 	cursor: hand;
-	background-color: #15A0A5;
+	background-color: #007bff;
 	padding: 16px;
 	padding-left: 26px;
 	padding-right: 26px;
@@ -1031,7 +1031,7 @@ input[type="file"] {
 .btn3 {
 	cursor: pointer;
 	cursor: hand;
-	background-color: #15A0A5;
+	background-color: #007bff;
 	padding: 4px;
 	padding-left: 16px;
 	padding-right: 16px;

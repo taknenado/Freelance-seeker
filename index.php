@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/test2.css">
     <!-- <script src="js/script.js"></script> -->
 
-    <style>
+<style>
         body {
             background-color: #f5f5f5;
             font-family: Arial, sans-serif;
@@ -91,7 +91,7 @@
         .x24 {
             font-size: 30px;
             font-family: OpenSansBold, Arial;
-            color: rgb(21, 160, 165);
+            color: #007bff;
             text-align: center;
             line-height: 30px;
             padding-bottom: 16px;
@@ -132,7 +132,7 @@
             margin-top: 20px;
             text-align: center;
         }
-    </style>
+</style>
     
 </head>
 <body>
@@ -186,7 +186,7 @@
     <div class="col-sm-4 x7">
         <div class="x8"><img src="img/a_ic3.png"></div>
         <div class="x5">Удобная схема работы с фрилансерами</div>
-        <div class="x6">Выбирайте фрилансера по  портфолио, рекомендациям  и отзывам</div>
+        <div class="x6">Выбирайте фрилансера по  портфолио, рекомендациям  и отзывам.</div>
     </div>    
     <div class="clear"><br><br></div>
     <div class="x9"><h2>Фрилансеры по специальностям:</h2></div>
@@ -254,7 +254,6 @@
             <a href="/freelancers/zvukorezhissery-audio/">Что-то тут будет</a><br>          
         </div>
     </div> 
-    <div class="clear"><br></div><div class="x12"><a href="/freelancers/" class="button">ПОЛНЫЙ КАТАЛОГ ФРИЛАНСЕРОВ</a></div>   <div class="clear"><br></div>         
 </div>
 
 <footer>
