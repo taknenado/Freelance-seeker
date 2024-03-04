@@ -1,9 +1,9 @@
 <?php
 
 // Подключение к БД 
-require_once("check_auth.php");
-require_once("DB_config.php");
-require_once("get_UserID.php");
+require_once("../check_auth.php");
+require_once("../DB_config.php");
+require_once("../get_UserID.php");
 
 // Проверка переданных данных
 if(isset($_POST['phone'])) {
