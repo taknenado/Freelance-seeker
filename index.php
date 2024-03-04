@@ -37,7 +37,7 @@
 
         .col-1 {
             width: 100%;
-            text-align: center; /* Центрирование содержимого в колонке */
+            text-align: center;
         }
 
         .button {
@@ -107,9 +107,9 @@
 
         .centered-textarea {
             text-align: center;
-            margin-top: 20px; /* Добавляем немного отступа сверху */
+            margin-top: 20px;
             display: flex;
-            justify-content: center; /* Выравнивание по горизонтали */
+            justify-content: center;
             max-width: 800px;
             background-color: rgb(255, 255, 255);
             margin: auto;
@@ -117,20 +117,20 @@
         }
 
         textarea {
-            width: 50%; /* Ширина textarea */
-            min-height: 100px; /* Минимальная высота textarea */
-            padding: 10px; /* Поля вокруг текста */
-            resize: vertical; /* Разрешаем вертикальное изменение размера */
+            width: 50%;
+            min-height: 100px;
+            padding: 10px;
+            resize: vertical;
         }
 
         .text-right {
-            text-align: left; /* Выравнивание текста по левому краю */
-            margin-top: 10px; /* Немного отступаем сверху */
+            text-align: left;
+            margin-top: 10px;
         }
 
         .create-request-button {
-            margin-top: 20px; /* Отступ от текста */
-            text-align: center; /* Центрируем текст */
+            margin-top: 20px;
+            text-align: center;
         }
     </style>
     
