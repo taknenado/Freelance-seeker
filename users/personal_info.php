@@ -57,8 +57,8 @@
 <body>
 <header>
 <nav class="nav-menu">
-            <a href="index.php" class="logo">Your Logo</a>
-            <ul class="nav-menu">
+        <a href="../index.php" class="logo">Your Logo</a>
+        <ul class="nav-menu">
             <li><a href="about.php">ЗАКАЗЫ</a></li>
             <li><a href="services.php">ФРИЛАНСЕРЫ</a></li>
             <li><a href="contact.php">ПОРТФОЛИО</a></li>
