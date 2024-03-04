@@ -5,6 +5,8 @@
     <title>Мой сайт</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav_menu.css">
+    <link rel="stylesheet" href="css/test.css">
+    <!-- <link rel="stylesheet" href="css/test2.css"> -->
     <!-- <script src="js/script.js"></script> -->
 
     <style>
@@ -15,7 +17,7 @@
             padding: 0;
         }
 
-        .container {
+        #container {
             min-height: 400px;
             margin: 0 auto;
             padding: 20px;
@@ -23,7 +25,8 @@
             background: url(img/a_fon.jpg) center top no-repeat; 
             background-size: cover  !important;
         }
-
+        .container { max-width:1150px; position: relative; } 
+        col-sm-4 .x7{width:33.33333333%;}
         h1 {
             color: #333;
         }
@@ -41,15 +44,15 @@
             display: inline-block;
             padding: 10px 20px;
             background-color: #007bff;
-            color: #fff;
             text-decoration: none;
             border-radius: 4px;
         }
 
         .button:hover {
             background-color: #0056b3;
+            color: #ffffff;
         }
-
+    
         .user-type {
             margin-bottom: 20px;
         }
@@ -150,25 +153,109 @@
     </nav>
 </header>
 
-<main>
-    <div class="container">
-        <div class="col-1">
-            <div class="cont-1">
-                <h1>Нужен фрилансер?</h1>
-            </div>
-            <div class="x24">Надежный и недорогой?</div>
-            <div class="x25">Фрилансеры-частники со всей страны готовя взяться за ваше задание</div>
-            <div class="centered-textarea text-right">
-                <textarea name="mess" placeholder="Введите текст заявки"></textarea>
-                <p style="padding: 10px;">Создайте задание и уже сегодня получайте предложения от фрилансеров с ценой и сроками исполнения</p>
-            </div>
-            <div class="create-request-button">
-                <a href="#" class="button">Создать заявку</a>
-            </div>
+<div id="container">
+    <div class="col-1">
+        <div class="cont-1">
+            <h1>Нужен фрилансер?</h1>
+        </div>
+        <div class="x24">Надежный и недорогой?</div>
+        <div class="x25">Фрилансеры-частники со всей страны готовя взяться за ваше задание</div>
+        <div class="centered-textarea text-right">
+            <textarea name="mess" placeholder="Введите текст заявки"></textarea>
+            <p style="padding: 10px;">Создайте задание и уже сегодня получайте предложения от фрилансеров с ценой и сроками исполнения</p>
+        </div>
+        <div class="create-request-button">
+            <a href="#" class="button">Создать заявку</a>
         </div>
     </div>
-</main>
+</div>
+<!-- Спасибо Денис, за то что ты помог люто! -->
+<div class="container"> 
+        <div class="clear"><br><br></div>
 
+    <div class="col-sm-4 x7">
+        <div class="x8"><img src="img/a_ic1.png"></div>
+        <div class="x5">Не нужно переплачивать фирме</div>
+        <div class="x6">Услуги фрилансеров стоят в разы дешевле, чем в студиях.</div>
+    </div>
+    <div class="col-sm-4 x7">
+        <div class="x8"><img src="img/a_ic2.png"></div>
+        <div class="x5">Без посредников и прочих «безопасных» сделок</div>
+        <div class="x6">Платите напрямую исполнителю, нет коммисий и дополнительных переплат.</div>
+    </div>
+    <div class="col-sm-4 x7">
+        <div class="x8"><img src="img/a_ic3.png"></div>
+        <div class="x5">Удобная схема работы с фрилансерами</div>
+        <div class="x6">Выбирайте фрилансера по  портфолио, рекомендациям  и отзывам</div>
+    </div>    
+    <div class="clear"><br><br></div>
+    <div class="x9"><h2>Фрилансеры по специальностям:</h2></div>
+    <div class="clear"><br><br></div>    
+    <div class="col-xs-6 col-md-3 x7R">
+        <div class="x10">Создание сайтов</div>
+        <div class="x11">
+            <a href="/freelancers/web-programmisty/">Что-то тут будет</a><br>
+            <a href="/freelancers/dizaynery-saytov-web/">Что-то тут будет</a><br>
+            <a href="/freelancers/verstka-saitov-html-css/">Что-то тут будет</a><br></div>
+    </div>
+    <div class="col-xs-6 col-md-3 x7R">
+        <div class="x10">Продвижение сайтов</div>
+        <div class="x11">
+            <a href="/freelancers/seo-yandex-google/">Что-то тут будет</a><br>
+            <a href="/freelancers/seo-copywriting/">Что-то тут будет</a><br>
+            <a href="/freelancers/seo-audit/">Что-то тут будет</a><br>        
+        </div>
+    </div>
+    <div class="col-xs-6 col-md-3 x7R">
+        <div class="x10">Тексты</div>
+        <div class="x11">
+            <a href="/freelancers/copywriter/">Что-то тут будет</a><br>
+            <a href="/freelancers/zhurnalisty/">Что-то тут будет</a><br>
+            <a href="/freelancers/slogany-neyming-zakazat/">Что-то тут будет</a><br>             
+        </div>
+    </div>
+    <div class="col-xs-6 col-md-3 x7R">
+        <div class="x10">Соцсети</div>
+        <div class="x11">
+            <a href="/freelancers/reklama-v-sotssetyakh/">Что-то тут будет</a><br>
+            <a href="/freelancers/smm_menedzher/">Что-то тут будет</a><br>
+            <a href="/freelancers/prodvizhenie-na-youtube/">Что-то тут будет</a><br>         
+        </div>
+    </div>            
+    <div class="col-xs-6 col-md-3 x7R">
+        <div class="x10">Графический дизайн</div>
+        <div class="x11">
+            <a href="/freelancers/sozdanie-logotipa/">Что-то тут будет</a><br>
+            <a href="/freelancers/designers-printers/">Что-то тут будет</a><br>
+            <a href="/freelancers/illyustratory/">Что-то тут будет</a><br>        
+        </div>
+    </div> 
+    <div class="col-xs-6 col-md-3 x7R">
+        <div class="x10">Маркетинг и реклама</div>
+        <div class="x11">
+            <a href="/freelancers/kontekstnaya-reklama-direct-adwords/">Что-то тут будет</a><br>
+            <a href="/freelancers/marketing/">Что-то тут будет</a><br>
+            <a href="/freelancers/reklamnye-kontseptsii/">Что-то тут будет</a><br>          
+        </div>
+    </div> 
+    <div class="col-xs-6 col-md-3 x7R">
+        <div class="x10">3D графика</div>
+        <div class="x11">
+            <a href="/freelancers/3d-animatory/">Что-то тут будет</a><br>
+            <a href="/freelancers/3d-hudozhniki-modeller/">Что-то тут будет</a><br>
+            <a href="/freelancers/modelirovanie/">Что-то тут будет</a><br>           
+        </div>
+    </div> 
+    <div class="col-xs-6 col-md-3 x7R">
+        <div class="x10">Аудио /  Видео</div>
+        <div class="x11">
+            <a href="/freelancers/videomontazh/">Что-то тут будет</a><br>
+            <a href="/freelancers/saund-dizayn-zvuka/">Что-то тут будет</a><br>
+            <a href="/freelancers/zvukorezhissery-audio/">Что-то тут будет</a><br>          
+        </div>
+    </div> 
+    <div class="clear"><br></div><div class="x12"><a href="/freelancers/" class="button">ПОЛНЫЙ КАТАЛОГ ФРИЛАНСЕРОВ</a></div>   <div class="clear"><br></div>         
+</div>
 
 <footer>
     <!-- Здесь может быть подвал сайта или дополнительная информация -->
