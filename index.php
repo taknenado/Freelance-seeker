@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav_menu.css">
     <link rel="stylesheet" href="css/test.css">
-    <!-- <link rel="stylesheet" href="css/test2.css"> -->
+    <link rel="stylesheet" href="css/test2.css">
     <!-- <script src="js/script.js"></script> -->
 
     <style>
