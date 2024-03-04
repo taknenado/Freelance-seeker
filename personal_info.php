@@ -75,14 +75,17 @@ if ($user_id) {
         echo "<div class='left-space'></div>";
         echo "<img src='img/avatar.jpg' alt='Аватар' class='avatar'>";
         echo "<strong><a style='font-size: 35px; margin-left: 15px;'>$username</a></strong>";
+        // кнопка редактирования 
         echo "<p><a href='#' onclick='toggleProfileFields()'>Редактировать профиль</a></p>";
+        echo "<form action='save_profile.php' method='post'>";
         echo "<div id='profileFields' style='display: none;'>";
         echo "<p><strong>Почта:</strong> $email</p>";
-        echo "<p><strong>Номер телефона:</strong> $phone</p>";
+        echo "<input type='text' id='phone' name='phone' placeholder='+7 (___) ___-__-__' value='$phone'>"; 
         echo "<p><strong>Пол:</strong> $gender</p>";
         echo "<p><strong>Тип пользователя:</strong> $user_type</p>";
-        echo "<a href='#' onclick='toggleProfileFields('block') class='save-button button-container'>Сохранить</a>";
-        echo "</div>";
+        echo "<button type='submit' class='save-button button-container'>Сохранить</button>";
+        echo "</div>"; 
+        echo "</form>";
         echo "<p><a href='portfolio.php'>Портфолио</a>, <a href='about_me.php'>Обо мне</a>, <a href='contact.php'>Контакты</a>, <a href='reviews.php'>Отзывы</a></p>";
 
     } else {
@@ -95,7 +98,11 @@ if ($user_id) {
 mysqli_close($connection);
 ?>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 <script>
+    $("#phone").mask("+7 (999) 999-99-99");
+
     function toggleProfileFields() {
         var profileFields = document.getElementById('profileFields');
         if (profileFields.style.display === 'none') {
