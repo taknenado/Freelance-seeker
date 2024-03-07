@@ -1,3 +1,6 @@
+<?php
+require_once('check_auth.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -145,10 +148,16 @@
             <li><a href="contact.php">ПОРТФОЛИО</a></li>
             <li><a href="contact.php">УСЛУГИ</a></li>
             <li><a href="contact.php">ВАКАНСИИ</a></li>
+            
         </ul> 
-        <ul>   
-            <li><a href="login.php" class="button login-button">Войти</a></li>
-            <li><a href="registration/register.php" class="button register-button">Зарегестрироваться</a></li>
+        <ul>  
+        <li class="right-align">
+  <a href="users/personal_info.php" class="button userinfo_button">
+    <?php echo $_SESSION['username']; ?>
+  </a>
+</li> 
+            <!-- <li><a href="login.php" class="button login-button">Войти</a></li>
+            <li><a href="registration/register.php" class="button register-button">Зарегестрироваться</a></li> -->
         </ul>
     </nav>
 </header>
@@ -165,7 +174,7 @@
             <p style="padding: 10px;">Создайте задание и уже сегодня получайте предложения от фрилансеров с ценой и сроками исполнения</p>
         </div>
         <div class="create-request-button">
-            <a href="#" class="button">Создать заявку</a>
+            <a href="add_project.php" class="button">Создать заявку</a>
         </div>
     </div>
 </div>

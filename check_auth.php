@@ -1,9 +1,12 @@
 <?php
-session_start(); // Начинаем сессию
-// Проверяем, авторизован ли пользователь
-if (!isset($_SESSION['username'])) {
-    // Пользователь не авторизован, перенаправляем на страницу авторизации
-    header("Location: login.php");
-    exit();
+
+session_start();
+
+if(!isset($_SESSION['username']) && $_SERVER['SCRIPT_NAME'] != '/index.php') {
+
+  header("Location: login.php");
+  exit();
+
 }
+
 ?>

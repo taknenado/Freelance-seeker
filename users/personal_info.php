@@ -66,7 +66,7 @@
             <li><a href="contact.php">ВАКАНСИИ</a></li>
         </ul> 
         <ul>   
-            <li><a href="logout.php" class="logout_button button-container">Выйти</a></li>
+            <li><a href="../logout.php" class="logout_button button-container">Выйти</a></li>
             
         </ul>
     </nav>
