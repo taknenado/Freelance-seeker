@@ -148,15 +148,27 @@
             <li><a href="contact.php">ВАКАНСИИ</a></li>
             
         </ul> 
-        <ul>  
-        <li class="right-align">
-        <a href="users/personal_info.php" class="button userinfo_button">
-            <?php echo $_SESSION['username']; ?>
-        </a>
-        </li> 
-            <!-- <li><a href="login.php" class="button login-button">Войти</a></li>
-            <li><a href="registration/register.php" class="button register-button">Зарегестрироваться</a></li> -->
+        <ul>
+            <?php
+            session_start();
+
+            if (isset($_SESSION['username'])) {
+            ?>
+                <li class="right-align">
+                    <a href="users/personal_info.php" class="button userinfo_button">
+                    <?php echo $_SESSION['username']; ?>
+                    </a>
+                </li>
+            <?php  
+            } else {
+            ?>
+                <li><a href="login.php" class="button login-button">Войти</a></li>
+                <li><a href="registration/register.php" class="button register-button">Зарегестрироваться</a></li>
+            <?php
+            }
+            ?>
         </ul>
+
     </nav>
 </header>
 
