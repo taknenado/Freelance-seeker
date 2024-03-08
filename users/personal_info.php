@@ -76,8 +76,8 @@
 
 session_start();
 
-if(!isset($_SESSION['username'])) {
-    header("Location: /Freelance-seeker/login.php");
+if(!isset($_SESSION['username']) && $_SERVER['SCRIPT_NAME'] != '/index.php') {
+    header("Location: ../login.php");
     exit(); 
 
 }

@@ -1,7 +1,13 @@
 <?php
 
 // Подключение к БД 
-require_once("../check_auth.php");
+session_start();
+
+if(!isset($_SESSION['username']) && $_SERVER['SCRIPT_NAME'] != '/index.php') {
+    header("Location: ../login.php");
+    exit(); 
+
+}
 require_once("../DB_config.php");
 require_once("../get_UserID.php");
 
