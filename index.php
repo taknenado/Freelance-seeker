@@ -140,35 +140,34 @@
 <header>
     <nav class="nav-menu">
         <a href="index.php" class="logo">Your Logo</a>
-        <ul class="nav-menu">
-            <li><a href="about.php">ЗАКАЗЫ</a></li>
-            <li><a href="services.php">ФРИЛАНСЕРЫ</a></li>
-            <li><a href="contact.php">ПОРТФОЛИО</a></li>
-            <li><a href="contact.php">УСЛУГИ</a></li>
-            <li><a href="contact.php">ВАКАНСИИ</a></li>
-            
-        </ul> 
-        <ul>
-            <?php
-            session_start();
+            <ul class="nav-menu">
+                <li><a href="about.php">ЗАКАЗЫ</a></li>
+                <li><a href="services.php">ФРИЛАНСЕРЫ</a></li>
+                <li><a href="contact.php">ПОРТФОЛИО</a></li>
+                <li><a href="contact.php">УСЛУГИ</a></li>
+                <li><a href="contact.php">ВАКАНСИИ</a></li>
+                
+            </ul> 
+            <ul>
+                <?php
+                session_start();
 
-            if (isset($_SESSION['username'])) {
-            ?>
-                <li class="right-align">
-                    <a href="users/personal_info.php" class="button userinfo_button">
-                    <?php echo $_SESSION['username']; ?>
-                    </a>
-                </li>
-            <?php  
-            } else {
-            ?>
-                <li><a href="login.php" class="button login-button">Войти</a></li>
-                <li><a href="registration/register.php" class="button register-button">Зарегестрироваться</a></li>
-            <?php
-            }
-            ?>
-        </ul>
-
+                if (isset($_SESSION['username'])) {
+                ?>
+                    <li class="right-align">
+                        <a href="users/personal_info.php" class="button userinfo_button">
+                        <?php echo $_SESSION['username']; ?>
+                        </a>
+                    </li>
+                <?php  
+                } else {
+                ?>
+                    <li><a href="login.php" class="button login-button">Войти</a></li>
+                    <li><a href="registration/register.php" class="button register-button">Зарегестрироваться</a></li>
+                <?php
+                }
+                ?>
+            </ul>
     </nav>
 </header>
 
