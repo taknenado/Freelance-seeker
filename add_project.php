@@ -132,9 +132,9 @@ require_once('check_auth.php');
 <input type="text"  name="budget" size="26" maxlength="8" class="input-txt only_numbers" style="width:100%; max-width:264px;" value="">
 <span id="BDUGET">
     <SELECT NAME="radio">
-        <OPTION value="r"  >РУБ</OPTION>
-        <OPTION value="d"  >USD</OPTION>
-        <OPTION value="e"  >EUR</OPTION>
+        <OPTION value="r">РУБ</OPTION>
+        <OPTION value="d">USD</OPTION>
+        <OPTION value="e">EUR</OPTION>
     </SELECT>
 </span>
         </td>
@@ -155,7 +155,8 @@ require_once('check_auth.php');
             <td width="170" valign="top">
                 Описание предложения <font class="error">*</font></td>
             <td width="*" align="left">
-                <textarea required name="mess" style="width:100%; max-width:650px; height:250px" rows="12" cols="35" class="form3_add input-textarea"></textarea>
+            <?php echo "$taskDescription = $_POST[task_description];"?>
+                <textarea required name="mess"  style="width:100%; max-width:650px; height:250px" rows="12" cols="35" class="form3_add input-textarea" value="<?php echo $_POST['task_description']; ?>></textarea>
             </td>
         </tr>
         <tr>

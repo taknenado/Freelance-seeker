@@ -178,13 +178,15 @@
         </div>
         <div class="x24">Надежный и недорогой?</div>
         <div class="x25">Фрилансеры-частники со всей страны готовя взяться за ваше задание</div>
-        <div class="centered-textarea text-right">
-            <textarea name="mess" placeholder="Введите текст заявки"></textarea>
-            <p style="padding: 10px;">Создайте задание и уже сегодня получайте предложения от фрилансеров с ценой и сроками исполнения</p>
-        </div>
-        <div class="create-request-button">
-            <a href="add_project.php" class="button">Создать заявку</a>
-        </div>
+        <form action="/add_project.php" method="POST">
+            <div class="centered-textarea text-right">
+                <textarea name="task_description" placeholder="Введите текст заявки"></textarea>
+                <p style="padding: 10px;">Создайте задание и уже сегодня получайте предложения от фрилансеров с ценой и сроками исполнения</p>
+            </div>
+            <div class="create-request-button">
+                <button type="submit" class="button">Создать заявку</button>
+            </div>
+        </form>
     </div>
 </div>
 <!-- Спасибо Денис, за то что ты помог люто! -->
