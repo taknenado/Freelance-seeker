@@ -147,9 +147,15 @@ if ($user_id) {
         echo "<div class='dropdown-content'>";
         echo "<button class='hidden' onclick='openFileSelector()'>Обновить фотографию</button>";
         echo "</div>";
-        echo " <img src='avatars/default-avatar.jpg' alt='User Avatar' class='avatar'>";
+        $avatarPath = 'avatars/';
+        
+        // Проверка наличия пути к аватарке
+        if (!empty($avatarPath)) {
+            echo "<img src='$avatarPath' alt='User Avatar'>";
+        } else {
+            echo "<img src='avatars/default-avatar.jpg' alt='Default Avatar'>";
+        }
         echo "</div>";
-        echo "";
         echo "</div>";
         echo "<br>";
         echo "<p><a href='#' onclick='toggleProfileFields()'>Редактировать профиль</a></p>";
@@ -201,29 +207,29 @@ mysqli_close($connection);
     }
 
     function handleFileUpload(event) {
-    const file = event.target.files[0];
-    const formData = new FormData();
-    formData.append('avatar', file);
+  const file = event.target.files[0];
+  const formData = new FormData();
+  formData.append('avatar', file);
 
-    fetch('update_avatar.php', {
-        method: 'POST',
-        body: formData
-    })
+  fetch('update_avatar.php', {
+    method: 'POST',
+    body: formData
+  })
     .then(response => response.json())
     .then(data => {
-        if (data.success) {
+      if (data.success) {
         // Обновление аватара на странице
         const avatarImg = document.querySelector('.avatar');
         avatarImg.src = data.avatarURL;
-        } else {
+      } else {
         // Обработка ошибки
         console.error(data.error);
-        }
+      }
     })
     .catch(error => {
-        console.error('Произошла ошибка:', error);
+      console.error('Произошла ошибка:', error);
     });
-    }
+}
     let hideTimeout;
   let buttonVisible = false;
   
