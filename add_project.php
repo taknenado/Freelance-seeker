@@ -44,7 +44,7 @@ require_once('check_auth.php');
 .jq-selectbox__select{ width: 338px !important; }
 #BDUGET .jq-selectbox__select{ width: 70px !important; }
 </style>
-<form action="/add_project.php" method="POST" enctype="multipart/form-data">
+<form action="add_project.php" method="POST" enctype="multipart/form-data">
 <table  class="table table-striped table-bordered table-responsive">
 <tr>
 <td width="170">
@@ -155,8 +155,13 @@ require_once('check_auth.php');
             <td width="170" valign="top">
                 Описание предложения <font class="error">*</font></td>
             <td width="*" align="left">
-            <?php echo "$taskDescription = $_POST[task_description];"?>
-                <textarea required name="mess"  style="width:100%; max-width:650px; height:250px" rows="12" cols="35" class="form3_add input-textarea" value="<?php echo $_POST['task_description']; ?>></textarea>
+            <?php $taskDescription = $_POST['task_description']; ?>
+            <textarea name="mess"  
+          style="width:100%; max-width:650px; height:250px" 
+          rows="12" cols="35" class="form3_add input-textarea">
+            <?php echo preg_replace('/\s+/', ' ', $taskDescription); ?>  
+</textarea>
+
             </td>
         </tr>
         <tr>

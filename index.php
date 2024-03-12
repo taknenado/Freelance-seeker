@@ -178,7 +178,7 @@
         </div>
         <div class="x24">Надежный и недорогой?</div>
         <div class="x25">Фрилансеры-частники со всей страны готовя взяться за ваше задание</div>
-        <form action="/add_project.php" method="POST">
+        <form action="add_project.php" method="POST">
             <div class="centered-textarea text-right">
                 <textarea name="task_description" placeholder="Введите текст заявки"></textarea>
                 <p style="padding: 10px;">Создайте задание и уже сегодня получайте предложения от фрилансеров с ценой и сроками исполнения</p>
