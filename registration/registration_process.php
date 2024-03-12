@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <link rel="stylesheet" href="../css/style.css"> 
     <link rel="stylesheet" href="../css/reg_log_style.css">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +51,45 @@
         color: #343434;
         margin-right: 10px;
         }
+        .avatar-content {
+            display: flex;
+            align-items: center;
+        }
 
+        .nickname {
+            margin-left: 10px;
+        }
+
+        .avatar-dropdown {
+    position: relative;
+}
+
+.avatar-container,
+.dropdown-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dropdown-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.avatar-dropdown:hover .dropdown-content,
+.avatar-dropdown:hover .avatar-container,
+.dropdown-content:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hidden {
+    display: none;
+}
     </style>
 </head>
 <body>
@@ -105,9 +143,15 @@ if ($user_id) {
         echo "<h2>Личный кабинет</h2>";
         echo "<div class='left-space'></div>";
         echo "<div class='user'>";
-            echo "<img src='../img/avatar.jpg' alt='Аватар' class='avatar'>";
-            echo "<strong><a class='username'>$username</a></strong>";
+        echo "<div class='avatar-dropdown' onmouseenter='showButton()' onmouseleave='hideButton()'>";
+        echo "<div class='dropdown-content'>";
+        echo "<button class='hidden' onclick='openFileSelector()'>Обновить фотографию</button>";
         echo "</div>";
+        echo " <img src='avatars/default-avatar.jpg' alt='User Avatar' class='avatar'>";
+        echo "</div>";
+        echo "";
+        echo "</div>";
+        echo "<br>";
         echo "<p><a href='#' onclick='toggleProfileFields()'>Редактировать профиль</a></p>";
             echo "<form action='save_profile.php' method='post'>";
                 echo "<div id='profileFields' style='display: none;'>";
@@ -147,6 +191,58 @@ mysqli_close($connection);
             profileFields.style.display = 'none';
         }
     }
+
+    function openFileSelector() {
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = 'image/*';
+        fileInput.onchange = handleFileUpload;
+        fileInput.click();
+    }
+
+    function handleFileUpload(event) {
+    const file = event.target.files[0];
+    const formData = new FormData();
+    formData.append('avatar', file);
+
+    fetch('update_avatar.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+        // Обновление аватара на странице
+        const avatarImg = document.querySelector('.avatar');
+        avatarImg.src = data.avatarURL;
+        } else {
+        // Обработка ошибки
+        console.error(data.error);
+        }
+    })
+    .catch(error => {
+        console.error('Произошла ошибка:', error);
+    });
+    }
+    let hideTimeout;
+  let buttonVisible = false;
+  
+  function showButton() {
+    clearTimeout(hideTimeout);
+    const button = document.querySelector('.dropdown-content button');
+    button.classList.remove('hidden');
+    buttonVisible = true;
+  }
+
+  function hideButton() {
+    hideTimeout = setTimeout(() => {
+      if (!buttonVisible) {
+        const button = document.querySelector('.dropdown-content button');
+        button.classList.add('hidden');
+      }
+      buttonVisible = false;
+    }, 500);
+  }
 </script>
 </body>
 </html>

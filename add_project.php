@@ -2,7 +2,7 @@
 require_once('check_auth.php');
 ?>
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="ru">
 
     <head>
         <meta charset="UTF-8">

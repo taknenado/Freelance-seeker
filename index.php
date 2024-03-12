@@ -133,6 +133,7 @@
             margin-top: 20px;
             text-align: center;
         }
+        
 </style>
     
 </head>
@@ -275,10 +276,6 @@
         </div>
     </div> 
 </div>
-
-<footer>
-    <!-- Здесь может быть подвал сайта или дополнительная информация -->
-</footer>
 
 </body>
 </html>
