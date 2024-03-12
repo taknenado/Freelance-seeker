@@ -151,36 +151,15 @@ require_once('check_auth.php');
                 <input type="text" style="width:100%; max-width:650px;" name="company" size="40" maxlength="34" class="input-txt" value="">
             </td>
         </tr>
-        <tr>
-            <td width="170" valign="top">
-                Описание предложения <font class="error">*</font></td>
-            <td width="*" align="left">
-            <?php $taskDescription = $_POST['task_description']; ?>
-            <textarea name="mess"  
-          style="width:100%; max-width:650px; height:250px" 
-          rows="12" cols="35" class="form3_add input-textarea">
-            <?php echo preg_replace('/\s+/', ' ', $taskDescription); ?>  
-</textarea>
-
-            </td>
-        </tr>
-        <tr>
-            <td width="170">&nbsp;</td>
-            <td width="*" align="left" style="padding-top:10px">
-                <input type="checkbox" name="checkbox" id="checkes">&nbsp;
-                <label class="label" for="checkes">Предоплата</label>
-            </td>
-        </tr>
-        <tr>
-            <td width="170" valign="top">Прикрепить файл (логотип, превью, иллюстрацию к проекту)</td>
-            <td width="*" align="left">
-                <input name="img_prev" type="file" />
-                <br/> (
-                <b>Форматы:</b> .GIF &nbsp; .JPG &nbsp; .DOC &nbsp; .RTF &nbsp; .PDF &nbsp; .RAR &nbsp; .ZIP) - Размер файла &lt; 1,5Мб.
-                <br/>
-                <br/>
-            </td>
-        </tr>
+    <tr>
+        <td width="170" valign="top">
+        Описание предложения <font class="error">*</font>
+        </td>
+        <td width="*" align="left">
+            <?php $taskDescription = isset($_POST['task_description']) ? trim($_POST['task_description']) : ''; ?>
+            <textarea name="mess" style="width:100%; max-width:650px; height:250px" rows="12" cols="35" class="form3_add input-textarea"><?php echo htmlspecialchars($taskDescription); ?></textarea>
+        </td>
+    </tr>
 
         <tr>
             <td width="170" valign="top">&nbsp;</td>
@@ -201,5 +180,4 @@ require_once('check_auth.php');
         </form>
         </span>
     </body>
-
     </html>
