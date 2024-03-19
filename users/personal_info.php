@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/nav_menu.css">
     <style>
         
-        .left-space {
+    .left-space {
         margin-left: 20px;
         }
         .avatar {
@@ -59,38 +59,11 @@
         .nickname {
             margin-left: 10px;
         }
+    
 
-        .avatar-dropdown {
-    position: relative;
-}
 
-.avatar-container,
-.dropdown-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
 
-.dropdown-content {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-}
-
-.avatar-dropdown:hover .dropdown-content,
-.avatar-dropdown:hover .avatar-container,
-.dropdown-content:hover {
-    opacity: 1;
-    visibility: visible;
-}
-
-.hidden {
-    display: none;
-}
-    </style>
+</style>
 </head>
 <body>
 <header>
@@ -114,11 +87,11 @@
 
 session_start();
 
-if(!isset($_SESSION['username']) && $_SERVER['SCRIPT_NAME'] != '/index.php') {
+if (!isset($_SESSION['username']) && $_SERVER['SCRIPT_NAME'] != '/index.php') {
     header("Location: ../login.php");
-    exit(); 
-
+    exit();
 }
+
 require_once("../DB_config.php");
 require_once("../get_UserID.php");
 
@@ -143,36 +116,51 @@ if ($user_id) {
         echo "<h2>Личный кабинет</h2>";
         echo "<div class='left-space'></div>";
         echo "<div class='user'>";
-        echo "<div class='avatar-dropdown' onmouseenter='showButton()' onmouseleave='hideButton()'>";
-        echo "<div class='dropdown-content'>";
-        echo "<button class='hidden' onclick='openFileSelector()'>Обновить фотографию</button>";
-        echo "</div>";
-        $avatarPath = 'avatars/';
-        
-        // Проверка наличия пути к аватарке
-        if (!empty($avatarPath)) {
-            echo "<img src='$avatarPath' alt='User Avatar'>";
-        } else {
-            echo "<img src='avatars/default-avatar.jpg' alt='Default Avatar'>";
-        }
+
+
+        // Запрос аватара
+        $sql = "SELECT avatar_path FROM users WHERE user_id = $user_id";
+        $result = mysqli_query($connection, $sql);
+        $row = mysqli_fetch_assoc($result);
+        $avatarPath = $row['avatar_path'];
+
+       
+        echo "<div class='avatar-container'>";
+            echo "<div class='avatar-content'>";
+                echo "<div class='avatar-content'>";
+                if ($avatarPath) {
+                    echo "<img src='$avatarPath' class='avatar'>";
+                } else {
+                    echo "<img src='default.png' class='avatar'>";
+                }
+                echo "</div>";
+                echo "</div>";
+            echo "<div class='avatar-actions'>";
+                echo "<form action='update_avatar.php' method='post' enctype='multipart/form-data'>";
+                echo "<div class='avatar-actions'>";
+                echo "<input type='file' name='avatar'>";
+                echo "<button type='submit'>Обновить аватар</button>";
+                echo "</div>";
+                echo "</form>";
+            echo "</div>";
         echo "</div>";
         echo "</div>";
         echo "<br>";
         echo "<p><a href='#' onclick='toggleProfileFields()'>Редактировать профиль</a></p>";
-            echo "<form action='save_profile.php' method='post'>";
-                echo "<div id='profileFields' style='display: none;'>";
-                    echo "<p><strong>Почта:</strong> $email</p>";
-                    echo "<input type='text' id='phone' name='phone' placeholder='+7 (___) ___-__-__' value='$phone'>"; 
-                    echo "<p><strong>Пол:</strong> $gender</p>";
-                    echo "<p><strong>Тип пользователя:</strong> $user_type</p>";
-                    echo "<button type='submit' class='save-button button-container'>Сохранить</button>";
-                echo "</div>"; 
-            echo "</form>";
-        echo "<div id='TwoMenu'";
-            echo "<p><span class='selected_menu'>Портфолио</span>"; 
-            echo "<a href='about_me.php'>Обо мне</a>"; 
-            echo "<a href='contact.php'>Контакты</a>"; 
-            echo "<a href='reviews.php'>Отзывы</a></p>";
+        echo "<form action='save_profile.php' method='post'>";
+        echo "<div id='profileFields' style='display: none;'>";
+        echo "<p><strong>Почта:</strong> $email</p>";
+        echo "<input type='text' id='phone' name='phone' placeholder='+7 (___) ___-__-__' value='$phone'>";
+        echo "<p><strong>Пол:</strong> $gender</p>";
+        echo "<p><strong>Тип пользователя:</strong> $user_type</p>";
+        echo "<button type='submit' class='save-button button-container'>Сохранить</button>";
+        echo "</div>";
+        echo "</form>";
+        echo "<div id='TwoMenu'>";
+        echo "<p><span class='selected_menu'>Портфолио</span>";
+        echo "<a href='about_me.php'>Обо мне</a>";
+        echo "<a href='contact.php'>Контакты</a>";
+        echo "<a href='reviews.php'>Отзывы</a></p>";
         echo "</div>";
     } else {
         echo "Данные пользователя не найдены.";

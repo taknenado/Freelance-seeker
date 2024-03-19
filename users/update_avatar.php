@@ -1,49 +1,60 @@
 <?php
-require_once '../check_auth.php';
+
+require_once '../check_auth.php'; 
 require_once '../DB_config.php';
-session_start();
-// Обработка загрузки файла аватарки
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['avatar'])) {
-    $avatarFile = $_FILES['avatar'];
-    $userId = $_POST['user_id']; // Предполагая, что вы передаете ID пользователя из формы
 
-    // Проверка наличия ошибок при загрузке файла
-    if ($avatarFile['error'] === UPLOAD_ERR_OK) {
-        $tempPath = $avatarFile['tmp_name'];
-        $fileName = $avatarFile['name'];
-        $fileExtension = pathinfo($fileName, PATHINFO_EXTENSION);
+// Проверка метода запроса
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        // Генерация уникального имени файла
-        $newFileName = uniqid('avatar_') . '.' . $fileExtension;
+  // Получаем данные о файле
+  $avatar = $_FILES['avatar'];
+  
+  // Валидация файла
+  $allowedTypes = ['image/jpeg', 'image/png'];
+  $maxSize = 2 * 1024 * 1024; // 2 MB
+  if (!in_array($avatar['type'], $allowedTypes)) {
+    $error = 'Недопустимый тип файла';
+  } elseif ($avatar['size'] > $maxSize) {
+    $error = 'Слишком большой размер файла';
+  }
+  
+  // Если ошибок нет - сохраняем файл
+  if (!isset($error)) {
+    
+    // Папка для сохранения
+    $uploadFolder = '../uploads/avatars/';
+    
+    // Генерируем уникальное имя
+    $fileExtension = pathinfo($avatar['name'], PATHINFO_EXTENSION);
+    $newFileName = uniqid() . "." . $fileExtension;
 
-        // Путь для сохранения файла
-        $uploadPath = 'avatars/' . $newFileName;
+    // Загружаем файл на сервер 
+    move_uploaded_file($avatar['tmp_name'], $uploadFolder . $newFileName);
+    
+    // Успешный ответ
+    $response = [
+      'uploaded' => true,
+      'fileName' => $newFileName
+    ];
+    
+  } else {
+    $response = [
+      'uploaded' => false,
+      'error' => $error
+    ];
+  }
+  $user_id = $_SESSION['user_id'];
 
-        // Перемещение загруженного файла в папку
-        if (move_uploaded_file($tempPath, $uploadPath)) {
-            // Обновление пути к аватарке в базе данных
-            $sql = "UPDATE users SET avatar = '$newFileName' WHERE user_id = $user_id";
+// Обновляем путь к аватару в БД
+$sql = "UPDATE users 
+        SET avatar_path = '../uploads/avatars/$newFileName' 
+        WHERE user_id = $user_id";
 
-            if ($conn->query($sql) === TRUE) {
-                echo "Аватар успешно обновлен";
-            } else {
-                echo "Ошибка при обновлении аватара: " . $conn->error;
-            }
-        } else {
-            echo "Ошибка при сохранении файла";
-        }
-    } else {
-        echo "Ошибка при загрузке файла: " . $avatarFile['error'];
-    }
-} else {
-    echo "Недопустимый запрос";
-}
+mysqli_query($connection, $sql);
 
-// Закрытие соединения с базой данных
-$conn->close();
-$response = array(
-    'success' => true,
-    'avatarURL' => $updatedAvatarURL
-  );
+// Делаем редирект обратно
+header('Location: personal_info.php?avatar_updated');
+
   echo json_encode($response);
-?>
+  
+}
