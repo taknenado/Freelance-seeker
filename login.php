@@ -33,7 +33,7 @@
     </form>
 
     <div class="center">
-      <p>Нет аккаунта? <a href="registration.php">Зарегистрироваться</a></p>
+      <p>Нет аккаунта? <a href="registration/register.php">Зарегистрироваться</a></p>
     </div>
   </main>
 </body>
