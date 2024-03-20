@@ -1,5 +1,7 @@
 <?php
 require_once('check_auth.php');
+require_once("DB_config.php");
+require_once("get_UserID.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,9 +51,52 @@ require_once('check_auth.php');
         </nav>
     </header>
 
-    <h1>Добро пожаловать, <?php echo $_SESSION['username']; ?>!</h1>
-    <p>Это специальная страница для авторизованных пользователей.</p>
-    <p>Здесь вы можете отображать контент, доступный только авторизованным пользователям.</p>
-    <!-- Дополнительный контент для зарегистрированных пользователей -->
+    <?php
+
+// Подключение к БД
+require_once("DB_config.php");
+
+// Запрос на получение данных пользователей
+$sql = "SELECT username, avatar_path FROM users";
+$result = mysqli_query($connection, $sql);
+
+// Массив для данных пользователей
+$users = []; 
+
+// Заполнение массива данными из запроса 
+while($row = mysqli_fetch_assoc($result)) {
+  $users[] = $row;
+}
+
+?>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-4">
+      <?php foreach ($users as $user): ?>
+        <div class="card">
+          <img src="<?php echo $user['avatar_path']; ?>" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title"><?php echo $user['username']; ?></h5>
+            <!-- другие данные по необходимости -->
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+
+    <div class="col-md-4">
+      <!-- аналогичный код для 2 столбца -->
+    </div>
+
+    <div class="col-md-4">
+       <!-- аналогичный код для 3 столбца -->
+    </div>
+
+  </div>
+
+</div>
+
 </body>
 </html>

@@ -60,7 +60,7 @@
         <a href="../index.php" class="logo">Your Logo</a>
         <ul class="nav-menu">
             <li><a href="about.php">ЗАКАЗЫ</a></li>
-            <li><a href="services.php">ФРИЛАНСЕРЫ</a></li>
+            <li><a href="freelansers.php">ФРИЛАНСЕРЫ</a></li>
             <li><a href="contact.php">ПОРТФОЛИО</a></li>
             <li><a href="contact.php">УСЛУГИ</a></li>
             <li><a href="contact.php">ВАКАНСИИ</a></li>
