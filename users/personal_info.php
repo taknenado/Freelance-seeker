@@ -92,6 +92,7 @@ if (!isset($_SESSION['username']) && $_SERVER['SCRIPT_NAME'] != '/index.php') {
 
 require_once("../DB_config.php");
 require_once("../get_UserID.php");
+require_once("../site_settings.php");
 
 $user_id = $_SESSION['user_id'] ?? null;
 
@@ -127,10 +128,7 @@ if ($user_id) {
             echo "<div class='avatar-content'>";
                 echo "<div class='avatar-content'>";
                 if ($avatarPath) {
-                    echo "<img src='$avatarPath' class='avatar'>";
-                } else {
-                    echo "<img src='default.png' class='avatar'>";
-                }
+                    echo "<img src='$baseUrl$avatarPath' class='avatar'>";}
                 echo "</div>";
                 echo "<div class='nickname'>";
                 echo "<p class='username'>$username</p>";

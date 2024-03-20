@@ -2,6 +2,7 @@
 require_once('check_auth.php');
 require_once("DB_config.php");
 require_once("get_UserID.php");
+require_once("site_settings.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,7 +78,7 @@ while($row = mysqli_fetch_assoc($result)) {
     <div class="col-md-4">
       <?php foreach ($users as $user): ?>
         <div class="card">
-          <img src="<?php echo $user['avatar_path']; ?>" class="card-img-top">
+        <img src="<?php echo $baseUrl . $user['avatar_path']; ?>" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title"><?php echo $user['username']; ?></h5>
             <!-- другие данные по необходимости -->

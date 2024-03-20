@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Обновляем путь к аватару в БД
 $sql = "UPDATE users 
-        SET avatar_path = '../uploads/avatars/$newFileName' 
+        SET avatar_path = '/uploads/avatars/$newFileName' 
         WHERE user_id = $user_id";
 
 mysqli_query($connection, $sql);
