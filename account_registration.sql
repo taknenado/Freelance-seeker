@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 20, 2024 at 11:07 AM
+-- Generation Time: Mar 20, 2024 at 12:32 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -37,7 +37,7 @@ CREATE TABLE `users` (
   `birthdate` date NOT NULL,
   `user_type` enum('freelanser','employer') NOT NULL,
   `avatar` varchar(255) DEFAULT NULL,
-  `avatar_path` varchar(255) DEFAULT '../uploads/avatars/default-avatar.jpg'
+  `avatar_path` varchar(255) DEFAULT '/uploads/avatars/default-avatar.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -45,7 +45,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `phone`, `gender`, `birthdate`, `user_type`, `avatar`, `avatar_path`) VALUES
-(1, 'taknenado', 'test@test.test', '123', '+7 (534) 534-53-45', 'male', '2024-03-01', 'freelanser', NULL, '../uploads/avatars/65faaeede5399.jpg');
+(1, 'taknenado', 'test@test.test', '123', '+7 (543) 254-35-43', 'male', '2024-03-01', 'freelanser', NULL, '/uploads/avatars/65facc9124e33.jpg'),
+(2, '123', 'test1@test.test', '123', '+7 (323) 232-32-32', 'male', '2024-03-01', 'freelanser', NULL, '/uploads/avatars/default-avatar.jpg'),
+(3, '1234', 'test2@test.test', '123', '+7 (123) 123-12-33', 'male', '2024-03-01', 'freelanser', NULL, '/uploads/avatars/default-avatar.jpg'),
+(4, '12345', 'test4@test.test', '123', '+7 (333) 333-32-32', 'male', '2024-03-02', 'freelanser', NULL, '/uploads/avatars/default-avatar.jpg');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +68,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
