@@ -33,6 +33,26 @@ require_once("site_settings.php");
         transition: background-color 0.3s;
         margin-top: 20px;
   }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 5px;
+    
+  }
+  
+  .avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+  }
     </style>
 </head>
 <body>
@@ -70,33 +90,16 @@ while($row = mysqli_fetch_assoc($result)) {
 }
 
 ?>
-
+<div class="clear"><br><br></div>
 <div class="container">
-
-  <div class="row">
-
-    <div class="col-md-4">
-      <?php foreach ($users as $user): ?>
-        <div class="card">
-        <img src="<?php echo $baseUrl . $user['avatar_path']; ?>" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title"><?php echo $user['username']; ?></h5>
-            <!-- другие данные по необходимости -->
-          </div>
-        </div>
-      <?php endforeach; ?>
+  <?php foreach ($users as $user): ?>
+    <div class="card">
+      <img src="<?php echo $baseUrl . $user['avatar_path']; ?>" class="avatar">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $user['username']; ?></h5>
+      </div>
     </div>
-
-    <div class="col-md-4">
-      <!-- аналогичный код для 2 столбца -->
-    </div>
-
-    <div class="col-md-4">
-       <!-- аналогичный код для 3 столбца -->
-    </div>
-
-  </div>
-
+  <?php endforeach; ?>
 </div>
 
 </body>
