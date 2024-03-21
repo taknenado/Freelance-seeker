@@ -1,7 +1,5 @@
 <?php
-require_once('check_auth.php');
 require_once("DB_config.php");
-require_once("get_UserID.php");
 require_once("site_settings.php");
 ?>
 <!DOCTYPE html>
@@ -40,19 +38,47 @@ require_once("site_settings.php");
   }
   
   .card {
-    width: calc(33.33% - 20px);
-    margin: 10px;
-    text-align: center;
-    border: 1px solid #000;
-    border-radius: 5px;
-    
+  display: flex;
+  justify-content: flex-start;
+  width: calc(32.33% - 20px);
+  margin: 10px;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.avatar-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.card-title {
+  margin-left: 10px;
+}
+@media (max-width: 1000px) {
+  .container {
+    justify-content: center;
   }
-  
-  .avatar {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
+}
+@media (max-width: 1000px) {
+  .card {
+    width: calc(50% - 20px);
   }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}
     </style>
 </head>
 <body>
@@ -66,25 +92,36 @@ require_once("site_settings.php");
             <li><a href="contact.php">УСЛУГИ</a></li>
             <li><a href="contact.php">ВАКАНСИИ</a></li>
             </ul> 
-            <ul>   
-            <li class="right-align"><a href="users/personal_info.php" class="button userinfo_button"><?php echo $_SESSION['username']; ?></a></li>
+            <ul>
+                <?php
+                session_start();
+
+                if (isset($_SESSION['username'])) {
+                ?>
+                    <li class="right-align">
+                        <a href="users/personal_info.php" class="button userinfo_button">
+                        <?php echo $_SESSION['username']; ?>
+                        </a>
+                    </li>
+                <?php  
+                } else {
+                ?>
+                    <li><a href="login.php" class="button login-button">Войти</a></li>
+                    <li><a href="registration/register.php" class="button register-button">Зарегестрироваться</a></li>
+                <?php
+                }
+                ?>
             </ul>
         </nav>
     </header>
 
     <?php
 
-// Подключение к БД
-require_once("DB_config.php");
-
-// Запрос на получение данных пользователей
 $sql = "SELECT username, avatar_path FROM users";
 $result = mysqli_query($connection, $sql);
 
-// Массив для данных пользователей
 $users = []; 
 
-// Заполнение массива данными из запроса 
 while($row = mysqli_fetch_assoc($result)) {
   $users[] = $row;
 }
@@ -93,12 +130,14 @@ while($row = mysqli_fetch_assoc($result)) {
 <div class="clear"><br><br></div>
 <div class="container">
   <?php foreach ($users as $user): ?>
-    <div class="card">
-      <img src="<?php echo $baseUrl . $user['avatar_path']; ?>" class="avatar">
-      <div class="card-body">
+  <div class="card">
+    <div class="card-body">
+      <div class="avatar-container">
+        <img src="<?php echo $baseUrl . $user['avatar_path']; ?>" class="avatar">
         <h5 class="card-title"><?php echo $user['username']; ?></h5>
       </div>
     </div>
+  </div>
   <?php endforeach; ?>
 </div>
 
