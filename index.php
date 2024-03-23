@@ -41,14 +41,6 @@
             text-align: center;
         }
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-
         .button:hover {
             background-color: #0056b3;
             color: #ffffff;
@@ -215,64 +207,64 @@
     <div class="col-xs-6 col-md-3 x7R">
         <div class="x10">Создание сайтов</div>
         <div class="x11">
-            <a href="/freelancers/web-programmisty/">Что-то тут будет</a><br>
-            <a href="/freelancers/dizaynery-saytov-web/">Что-то тут будет</a><br>
-            <a href="/freelancers/verstka-saitov-html-css/">Что-то тут будет</a><br></div>
+            <a href="/freelancers/web-programmisty/">Веб-программирование</a><br>
+            <a href="/freelancers/dizaynery-saytov-web/">Дизайн сайтов</a><br>
+            <a href="/freelancers/verstka-saitov-html-css/">Верстка</a><br></div>
     </div>
     <div class="col-xs-6 col-md-3 x7R">
         <div class="x10">Продвижение сайтов</div>
         <div class="x11">
-            <a href="/freelancers/seo-yandex-google/">Что-то тут будет</a><br>
-            <a href="/freelancers/seo-copywriting/">Что-то тут будет</a><br>
-            <a href="/freelancers/seo-audit/">Что-то тут будет</a><br>        
+            <a href="/freelancers/seo-yandex-google/">Продвижение сайтов</a><br>
+            <a href="/freelancers/seo-copywriting/">SEO-копирайтинг</a><br>
+            <a href="/freelancers/seo-audit/">SEO-аудит</a><br>        
         </div>
     </div>
     <div class="col-xs-6 col-md-3 x7R">
         <div class="x10">Тексты</div>
         <div class="x11">
-            <a href="/freelancers/copywriter/">Что-то тут будет</a><br>
-            <a href="/freelancers/zhurnalisty/">Что-то тут будет</a><br>
-            <a href="/freelancers/slogany-neyming-zakazat/">Что-то тут будет</a><br>             
+            <a href="/freelancers/copywriter/">Копирайтинг</a><br>
+            <a href="/freelancers/zhurnalisty/">Журналистика</a><br>
+            <a href="/freelancers/slogany-neyming-zakazat/">Слоганы/Нейминг</a><br>             
         </div>
     </div>
     <div class="col-xs-6 col-md-3 x7R">
         <div class="x10">Соцсети</div>
         <div class="x11">
-            <a href="/freelancers/reklama-v-sotssetyakh/">Что-то тут будет</a><br>
-            <a href="/freelancers/smm_menedzher/">Что-то тут будет</a><br>
-            <a href="/freelancers/prodvizhenie-na-youtube/">Что-то тут будет</a><br>         
+            <a href="/freelancers/reklama-v-sotssetyakh/">Реклама в соцсетях</a><br>
+            <a href="/freelancers/smm_menedzher/">Создание и ведение групп</a><br>
+            <a href="/freelancers/prodvizhenie-na-youtube/">Продвижение на Youtube</a><br>         
         </div>
     </div>            
     <div class="col-xs-6 col-md-3 x7R">
         <div class="x10">Графический дизайн</div>
         <div class="x11">
-            <a href="/freelancers/sozdanie-logotipa/">Что-то тут будет</a><br>
-            <a href="/freelancers/designers-printers/">Что-то тут будет</a><br>
-            <a href="/freelancers/illyustratory/">Что-то тут будет</a><br>        
+            <a href="/freelancers/sozdanie-logotipa/">Логотипы</a><br>
+            <a href="/freelancers/designers-printers/">Полиграфия</a><br>
+            <a href="/freelancers/illyustratory/">Иллюстрации</a><br>        
         </div>
     </div> 
     <div class="col-xs-6 col-md-3 x7R">
         <div class="x10">Маркетинг и реклама</div>
         <div class="x11">
-            <a href="/freelancers/kontekstnaya-reklama-direct-adwords/">Что-то тут будет</a><br>
-            <a href="/freelancers/marketing/">Что-то тут будет</a><br>
-            <a href="/freelancers/reklamnye-kontseptsii/">Что-то тут будет</a><br>          
+            <a href="/freelancers/kontekstnaya-reklama-direct-adwords/">Контекстная реклама</a><br>
+            <a href="/freelancers/marketing/">Маркетологи</a><br>
+            <a href="/freelancers/reklamnye-kontseptsii/">Рекламные концепции</a><br>          
         </div>
     </div> 
     <div class="col-xs-6 col-md-3 x7R">
         <div class="x10">3D графика</div>
         <div class="x11">
-            <a href="/freelancers/3d-animatory/">Что-то тут будет</a><br>
-            <a href="/freelancers/3d-hudozhniki-modeller/">Что-то тут будет</a><br>
-            <a href="/freelancers/modelirovanie/">Что-то тут будет</a><br>           
+            <a href="/freelancers/3d-animatory/">3D Анимация</a><br>
+            <a href="/freelancers/3d-hudozhniki-modeller/">3D Персонажи</a><br>
+            <a href="/freelancers/modelirovanie/">Визуализация</a><br>           
         </div>
     </div> 
     <div class="col-xs-6 col-md-3 x7R">
-        <div class="x10">Аудио /  Видео</div>
+        <div class="x10">Аудио / Видео</div>
         <div class="x11">
-            <a href="/freelancers/videomontazh/">Что-то тут будет</a><br>
-            <a href="/freelancers/saund-dizayn-zvuka/">Что-то тут будет</a><br>
-            <a href="/freelancers/zvukorezhissery-audio/">Что-то тут будет</a><br>          
+            <a href="/freelancers/videomontazh/">Видеомонтаж</a><br>
+            <a href="/freelancers/saund-dizayn-zvuka/">Саунддизайн</a><br>
+            <a href="/freelancers/zvukorezhissery-audio/">Звукорежиссеры</a><br>          
         </div>
     </div> 
 </div>
