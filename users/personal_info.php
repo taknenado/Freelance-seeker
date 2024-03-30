@@ -10,80 +10,80 @@
     <link rel="stylesheet" href="../css/nav_menu.css">
     <style>
         .left-space {
-            margin-left: 20px;
-            }
-            .avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            }
-            .nav-menu a {
-                margin-right: 10px;
-            }
-            .save-button{
-            display: inline-block;
-            background-color: #00FF00;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-            }
-            .user {
+        margin-left: 20px;
+        }
+        .avatar {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        }
+        .nav-menu a {
+            margin-right: 10px;
+        }
+        .save-button{
+        display: inline-block;
+        background-color: #00FF00;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 4px;
+        }
+        .user {
+        display: flex;
+        align-items: center; 
+        }
+        .username {
+        margin: auto 10px;
+        font-size: 25px
+        }
+        #TwoMenu A {
+        text-decoration: underline;
+        margin-right: 10px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: 'OpenSansBold', Arial;
+        color: #007bff;
+        }
+        .selected_menu {
+        font-size: 15px;
+        font-weight: bold;
+        font-family: 'OpenSansBold', Arial;
+        color: #343434;
+        margin-right: 10px;
+        }
+        .avatar-content {
             display: flex;
-            align-items: center; 
-            }
-            .username {
-            margin: auto 10px;
-            font-size: 25px
-            }
-            #TwoMenu A {
-            text-decoration: underline;
-            margin-right: 10px;
-            font-size: 15px;
-            font-weight: bold;
-            font-family: 'OpenSansBold', Arial;
-            color: #007bff;
-            }
-            .selected_menu {
-            font-size: 15px;
-            font-weight: bold;
-            font-family: 'OpenSansBold', Arial;
-            color: #343434;
-            margin-right: 10px;
-            }
-            .avatar-content {
-                display: flex;
-                align-items: center;
-            }
+            align-items: center;
+        }
     
-            .nickname {
-            margin-left: 10px; 
-            font-weight: bold;
-            }
-            /* Стили для основного списка */
-            select {
-                width: 100%;
-                padding: 5px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                font-size: 14px;
-                line-height: 1.5;
-            }
-            
-            select[disabled] {
-                background-color: #f0f0f0;
-                cursor: not-allowed;
-            }
-            
-            select option {
-                padding: 5px;
-            }
+        .nickname {
+        margin-left: 10px; 
+        font-weight: bold;
+        }
 
-            select option:checked {
-                font-weight: bold;
-                background-color: #007bff;
-                color: #fff;
-            }
+        select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        select[disabled] {
+            background-color: #f0f0f0;
+            cursor: not-allowed;
+        }
+
+        select option {
+            padding: 5px;
+        }
+
+        select option:checked {
+            font-weight: bold;
+            background-color: #007bff;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -155,63 +155,63 @@ if ($user_id) {
                 if ($avatarPath) {
                     echo "<img src='$baseUrl$avatarPath' class='avatar'>";}
                 echo "</div>";
-                echo "<div class='nickname'>";
-                echo "<p class='username'>$username</p>";
-                echo "</div>";
+                    echo "<div class='nickname'>";
+                        echo "<p class='username'>$username</p>";
+                    echo "</div>";
                 echo "</div>";
             echo "<div class='avatar-actions'>";
-                echo "<form action='update_avatar.php' method='post' enctype='multipart/form-data'>";
-                echo "<div class='avatar-actions'>";
-                echo "<input type='file' name='avatar'>";
-                echo "<button type='submit'>Обновить аватар</button>";
+                    echo "<form action='update_avatar.php' method='post' enctype='multipart/form-data'>";
+                        echo "<div class='avatar-actions'>";
+                            echo "<input type='file' name='avatar'>";
+                            echo "<button type='submit'>Обновить аватар</button>";
+                        echo "</div>";
+                    echo "</form>";
                 echo "</div>";
-                echo "</form>";
             echo "</div>";
-        echo "</div>";
         echo "</div>";
         echo "<br>";
         echo "<p><a href='#' onclick='toggleProfileFields()'>Редактировать профиль</a></p>";
         echo "<form action='save_profile.php' method='post'>";
-        echo "<div id='profileFields' style='display: none;'>";
-        echo "<p><strong>Почта:</strong> $email</p>";
-        echo "<input type='text' id='phone' name='phone' placeholder='+7 (___) ___-__-__' value='$phone'>";
-        echo "<p><strong>Пол:</strong> $gender</p>";
-        echo "<p><strong>Тип пользователя:</strong> $user_type</p>";
-        echo "<div style='display: flex;'>";
-        echo "<div style='margin-right: 20px;'>";
-        echo "<p><strong>Профессия:</strong></p>";
-        echo "<select name='profession' id='profession'>";
-        echo "<option value='0'>Выберите профессию</option>";
-        echo "<option value='1'>Разработка сайтов</option>";
-        echo "<option value='2'>Дизайн</option>";
-        echo "<option value='3'>Арт</option>";
-        echo "<option value='4'>Программирование</option>";
-        echo "<option value='5'>Тексты</option>";
-        echo "<option value='6'>Реклама/Маркетинг</option>";
-        echo "<option value='7'>3D Графика/Анимация</option>";
-        echo "<option value='8'>Архитектура / Интерьеры / Инжиниринг</option>";
-        echo "<option value='9'>Оптимизация (SEO)</option>";
-        echo "<option value='10'>Менеджмент</option>";
-        echo "<option value='11'>Флеш</option>";
-        echo "<option value='12'>Переводы</option>";
-        echo "<option value='13'>Фотография</option>";
-        echo "<option value='14'>Аудио/Видео</option>";
-        echo "<option value='15'>Консалтинг</option>";
-        echo "<option value='16'>Другое</option>";
-        echo "<option value='17'>Соцсети</option>";
-        echo "<option value='18'>Бухгалтерия</option>";
-        echo "</select>";
-        echo "</div>";
-        echo "<div>";
-        echo "<p><strong>Специализация:</strong></p>";
-        echo "<select name='specialization' id='specialization' disabled>";
-        echo "<option value='0'>Выберите свою специализацию</option>";
-        echo "</select>";
-        echo "</div>";
-        echo "</div>";
-        echo "<br><br>";
-        echo "<button type='submit' class='save-button button-container'>Сохранить</button>";
-        echo "</div>";
+            echo "<div id='profileFields' style='display: none;'>";
+                echo "<p><strong>Почта:</strong> $email</p>";
+                echo "<input type='text' id='phone' name='phone' placeholder='+7 (___) ___-__-__' value='$phone'>";
+                echo "<p><strong>Пол:</strong> $gender</p>";
+                echo "<p><strong>Тип пользователя:</strong> $user_type</p>";
+            echo "<div style='display: flex;'>";
+                echo "<div style='margin-right: 20px;'>";
+                echo "<p><strong>Профессия:</strong></p>";
+            echo "<select name='profession' id='profession'>";
+                echo "<option value='0'>Выберите профессию</option>";
+                echo "<option value='1'>Разработка сайтов</option>";
+                echo "<option value='2'>Дизайн</option>";
+                echo "<option value='3'>Арт</option>";
+                echo "<option value='4'>Программирование</option>";
+                echo "<option value='5'>Тексты</option>";
+                echo "<option value='6'>Реклама/Маркетинг</option>";
+                echo "<option value='7'>3D Графика/Анимация</option>";
+                echo "<option value='8'>Архитектура / Интерьеры / Инжиниринг</option>";
+                echo "<option value='9'>Оптимизация (SEO)</option>";
+                echo "<option value='10'>Менеджмент</option>";
+                echo "<option value='11'>Флеш</option>";
+                echo "<option value='12'>Переводы</option>";
+                echo "<option value='13'>Фотография</option>";
+                echo "<option value='14'>Аудио/Видео</option>";
+                echo "<option value='15'>Консалтинг</option>";
+                echo "<option value='16'>Другое</option>";
+                echo "<option value='17'>Соцсети</option>";
+                echo "<option value='18'>Бухгалтерия</option>";
+            echo "</select>";
+                echo "</div>";
+                echo "<div>";
+                echo "<p><strong>Специализация:</strong></p>";
+                echo "<select name='specialization' id='specialization' disabled>";
+                echo "<option value='0'>Выберите свою специализацию</option>";
+                echo "</select>";
+                echo "</div>";
+            echo "</div>";
+            echo "<br><br>";
+            echo "<button type='submit' class='save-button button-container'>Сохранить</button>";
+            echo "</div>";
         echo "</form>";
         echo "<div id='TwoMenu'>";
         echo "<p><span class='selected_menu'>Портфолио</span>";
@@ -263,11 +263,9 @@ mysqli_close($connection);
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-            // Обновление аватара на странице
             const avatarImg = document.querySelector('.avatar');
             avatarImg.src = data.avatarURL;
           } else {
-            // Обработка ошибки
             console.error(data.error);
           }
         })
@@ -295,11 +293,9 @@ mysqli_close($connection);
         }, 500);
       }
 
-        // Получаем ссылки на списки
   var professionSelect = document.getElementById("profession");
   var specializationSelect = document.getElementById("specialization");
 
-  // Определяем зависимые значения для списка "свою специальность"
   var specializationOptions = {
     1: ["Дизайн конверсионных лендингов", "Веб-программирование", "Верстка", "Дизайн сайтов", 'Сайт "под ключ"', "Системы администрирования (CMS)", "Флеш-сайты", "Прототипирование сайта", "Тестирование и аудит сайтов", "Разработка информационных порталов"],
     2: ["Баннеры", "Дизайн выставочных стендов", "Дизайн упаковки", "Иконки", "Интерфейсы", "Картография", "Логотипы", "Наружная реклама", "Полиграфическая верстка", "Полиграфия", "Предпечатная подготовка", "Презентации", "Промышленный дизайн", "Разработка шрифтов", "Технический дизайн", "Фирменный стиль", "Game-дизайн", "Дизайн мобильных приложений", "Дизайн мебели и предметов интерьера"],
@@ -322,20 +318,14 @@ mysqli_close($connection);
     
   };
 
-  // Обработчик изменения значения в списке "Профессия"
   professionSelect.addEventListener("change", function() {
-    // Получаем выбранное значение в списке "Профессия"
     var selectedProfession = this.value;
 
-    // Очищаем список "свою специальность"
     specializationSelect.innerHTML = "";
 
-    // Проверяем, есть ли зависимые значения для выбранной профессии
     if (selectedProfession in specializationOptions) {
-      // Получаем зависимые значения для выбранной профессии
       var options = specializationOptions[selectedProfession];
 
-      // Создаем новые элементы списка "свою специальность"
       for (var i = 0; i < options.length; i++) {
         var option = document.createElement("option");
         option.value = options[i]; // Здесь сохраняется само наименование специализации
@@ -343,10 +333,8 @@ mysqli_close($connection);
         specializationSelect.appendChild(option);
         }
 
-      // Включаем список "свою специальность"
       specializationSelect.disabled = false;
     } else {
-      // Если нет зависимых значений, добавляем пустой вариант и отключаем список "свою специальность"
       var option = document.createElement("option");
       option.value = 0;
       option.textContent = "Выберите свою специальность";

@@ -38,37 +38,10 @@ body {
 }
 .cont-1 h1 { 
     font-size:40px;
-     font-family: 'OpenSansBold', Arial;
-      color:#191919;
-       text-align: center;
-        line-height: 40px;
-         margin-bottom: 0px;
+    font-family: 'OpenSansBold', Arial;
+    color:#191919;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 0px;
 }
 
-/* Стили для основного списка */
-select {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  
-  /* Стили для отключенного списка */
-  select[disabled] {
-    background-color: #f0f0f0;
-    cursor: not-allowed;
-  }
-  
-  /* Стили для опций списка */
-  select option {
-    padding: 5px;
-  }
-  
-  /* Стили для выбранной опции списка */
-  select option:checked {
-    font-weight: bold;
-    background-color: #007bff;
-    color: #fff;
-  }
