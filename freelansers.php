@@ -4,31 +4,41 @@ require_once("site_settings.php");
 
 // Варианты фильтрации пользователей
 $filters = array(
-    "Видеомонтаж" => "Видеомонтаж",
-    "Вариант 2" => "value2",
-    "Вариантewewewe",
-    "Вариант 3" => "value3"
+    "Разработка сайтов" => "Разработка сайтов",
+    "Дизайн" => "Дизайн",
+    "Арт" => "Арт",
+    "Программирование" => "Программирование",
+    "Тексты" => "Тексты",
+    "Реклама/Маркетинг" => "Реклама/Маркетинг",
+    "3D Графика/Анимация" => "3D Графика/Анимация",
+    "Архитектура / Интерьеры / Инжиниринг" => "Архитектура / Интерьеры / Инжиниринг",
+    "Оптимизация (SEO)" => "Оптимизация (SEO)",
+    "Менеджмент" => "Менеджмент",
+    "Флеш" => "Флеш",
+    "Переводы" => "Переводы",
+    "Фотография" => "Фотография",
+    "Аудио/Видео" => "Аудио/Видео",
+    "Консалтинг" => "Консалтинг",
+    "Другое" => "Другое",
+    "Соцсети" => "Соцсети",
+    "Бухгалтерия" => "Бухгалтерия"
 );
 
-// Получение выбранного фильтра
 $filter = $_GET['filter'];
-
-// Получение пользователей в соответствии с выбранным фильтром
 $sql = "SELECT * FROM users";
 
 if (!empty($filter)) {
-    // Если выбран фильтр, добавляем условие WHERE в SQL-запрос
-    $sql .= " WHERE specialization = '$filter'";
+  $sql .= " WHERE profession = '$filter'";
 }
 
 $result = mysqli_query($connection, $sql);
-
 $users = array();
 
 while($row = mysqli_fetch_assoc($result)) {
-    $users[] = $row;
+  $users[] = $row;
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,6 +117,38 @@ while($row = mysqli_fetch_assoc($result)) {
   border-radius: 50%;
 }
 
+.form-inline {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Перемещение элементов вправо */
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        margin-right: 10px;
+    }
+
+    .form-group label {
+        margin-right: 5px;
+    }
+
+    .form-group select {
+        padding: 5px;
+        border-radius: 4px;
+    }
+
+    .btn {
+        padding: 5px 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
 
 @media (max-width: 1000px) {
   .container {
@@ -159,15 +201,20 @@ while($row = mysqli_fetch_assoc($result)) {
             </ul>
         </nav>
     </header>
-    <form id="filter-form" method="GET">
-        <label for="filter">Фильтр:</label>
-        <select name="filter" id="filter">
-            <option value="">Все</option>
-            <?php foreach ($filters as $option => $value): ?>
-                <option value="<?php echo $value; ?>" <?php if ($filter === $value) echo 'selected'; ?>><?php echo $option; ?></option>
-            <?php endforeach; ?>
-        </select>
-        <input type="submit" value="Применить">
+    <div class="clear"><br></div> 
+    <form id="filter-form" method="GET" class="form-inline">
+        <div class="form-group">
+            <label for="filter">Фильтр:</label>
+            <select name="filter" id="filter">
+                <option value="">Все</option>
+                <?php foreach ($filters as $option => $value): ?>
+                    <option value="<?php echo $value; ?>" <?php if ($filter === $value) echo 'selected'; ?>><?php echo $option; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+        <div class="form-group"> <!-- Новый контейнер для кнопки -->
+            <button type="submit" class="btn">Применить</button>
+        </div>
     </form>
     <div class="container">
         <?php if (count($users) > 0): ?>
@@ -183,7 +230,7 @@ while($row = mysqli_fetch_assoc($result)) {
                                   <span><?php echo $user['username']; ?></span>
                               </h5>
                               <h6 class="card-subtitle">
-                                  <span><?php echo $user['specialization']; ?></span>
+                              <span><?php echo $user['profession'] . " / " . $user['specialization']; ?></span>
                               </h6>
                           </div>
                       </div>
