@@ -14,9 +14,11 @@ if(isset($_POST['phone'])) {
   $user_id = $_SESSION['user_id'];
 
   $phone = $_POST['phone'];
+  $profession = $_POST['profession'];
   $specialization = $_POST['specialization'];
+  
 
-  $sql = "UPDATE users SET phone='$phone', specialization='$specialization' WHERE user_id='$user_id'";
+  $sql = "UPDATE users SET phone='$phone', specialization='$specialization', profession='$profession' WHERE user_id='$user_id'";
 
   if(mysqli_query($connection, $sql)) {
     $_SESSION['message'] = "Данные сохранены!"; 

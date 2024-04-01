@@ -52,8 +52,8 @@
         margin-right: 10px;
         }
         .avatar-content {
-            display: flex;
-            align-items: center;
+        display: flex;
+        align-items: center;
         }
     
         .nickname {
@@ -62,27 +62,27 @@
         }
 
         select {
-            width: 100%;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            line-height: 1.5;
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 1.5;
         }
 
         select[disabled] {
-            background-color: #f0f0f0;
-            cursor: not-allowed;
+        background-color: #f0f0f0;
+        cursor: not-allowed;
         }
 
         select option {
-            padding: 5px;
+        padding: 5px;
         }
 
         select option:checked {
-            font-weight: bold;
-            background-color: #007bff;
-            color: #fff;
+        font-weight: bold;
+        background-color: #007bff;
+        color: #fff;
         }
     </style>
 </head>
@@ -121,7 +121,7 @@ require_once("../site_settings.php");
 $user_id = $_SESSION['user_id'] ?? null;
 
 if ($user_id) {
-    $query = "SELECT username, email, phone, gender, user_type, specialization FROM users WHERE user_id = ?";
+    $query = "SELECT username, email, phone, gender, user_type, profession, specialization FROM users WHERE user_id = ?";
     $stmt = mysqli_prepare($connection, $query);
     mysqli_stmt_bind_param($stmt, "i", $user_id);
     mysqli_stmt_execute($stmt);
@@ -135,6 +135,7 @@ if ($user_id) {
         $phone = $row['phone'];
         $gender = $row['gender'];
         $user_type = $row['user_type'];
+        $profession = $row['profession'];
         $specialization = $row['specialization'];
 
         echo "<h2>Личный кабинет</h2>";
@@ -328,7 +329,7 @@ mysqli_close($connection);
 
       for (var i = 0; i < options.length; i++) {
         var option = document.createElement("option");
-        option.value = options[i]; // Здесь сохраняется само наименование специализации
+        option.value = options[i];
         option.textContent = options[i];
         specializationSelect.appendChild(option);
         }
