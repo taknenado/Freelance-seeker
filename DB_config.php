@@ -3,7 +3,7 @@
 $hostname = "localhost";
 $username = "root";
 $password = "";
-$database = "account_registration";
+$database = "account_registration_test";
 
 $connection = mysqli_connect($hostname, $username, $password, $database);
 if (!$connection) {
