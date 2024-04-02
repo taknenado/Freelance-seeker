@@ -12,14 +12,17 @@
         .left-space {
         margin-left: 20px;
         }
+
         .avatar {
         width: 90px;
         height: 90px;
         border-radius: 50%;
         }
+
         .nav-menu a {
             margin-right: 10px;
         }
+
         .save-button{
         display: inline-block;
         background-color: #00FF00;
@@ -28,14 +31,17 @@
         text-decoration: none;
         border-radius: 4px;
         }
+
         .user {
         display: flex;
         align-items: center; 
         }
+
         .username {
         margin: auto 10px;
         font-size: 25px
         }
+
         #TwoMenu A {
         text-decoration: underline;
         margin-right: 10px;
@@ -44,6 +50,7 @@
         font-family: 'OpenSansBold', Arial;
         color: #007bff;
         }
+
         .selected_menu {
         font-size: 15px;
         font-weight: bold;
@@ -51,6 +58,7 @@
         color: #343434;
         margin-right: 10px;
         }
+
         .avatar-content {
         display: flex;
         align-items: center;
@@ -142,14 +150,11 @@ if ($user_id) {
         echo "<div class='left-space'></div>";
         echo "<div class='user'>";
 
-
-        // Запрос аватара
         $sql = "SELECT avatar_path FROM users WHERE user_id = $user_id";
         $result = mysqli_query($connection, $sql);
         $row = mysqli_fetch_assoc($result);
         $avatarPath = $row['avatar_path'];
 
-       
         echo "<div class='avatar-container'>";
             echo "<div class='avatar-content'>";
                 echo "<div class='avatar-content'>";
