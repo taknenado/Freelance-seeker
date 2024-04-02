@@ -24,7 +24,7 @@ $filters = array(
     "Бухгалтерия" => "Бухгалтерия"
 );
 
-$filter = $_GET['filter'];
+$filter = isset($_GET['filter']) ? $_GET['filter'] : '';
 $sql = "SELECT * FROM users";
 
 if (!empty($filter)) {
@@ -120,7 +120,7 @@ while($row = mysqli_fetch_assoc($result)) {
 .form-inline {
         display: flex;
         align-items: center;
-        justify-content: flex-end; /* Перемещение элементов вправо */
+        justify-content: flex-end;
         margin-bottom: 10px;
     }
 
