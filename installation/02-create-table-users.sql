@@ -18,4 +18,3 @@ INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `phone`, `gende
 (2, '123', 'test1@test.test', '123', '+7 (323) 232-32-32', 'male', '2024-03-01', 'freelanser', '/uploads/avatars/66015ec7a58a9.png', 'Продвижение сайта по трафику', 'Оптимизация (SEO)'),
 (3, '1234', 'test2@test.test', '123', '+7 (123) 123-12-33', 'male', '2024-03-01', 'freelanser', '/uploads/avatars/660161bc439da.jpg', 'Крауд-маркетинг', 'Реклама/Маркетинг'),
 (4, '12345', 'test4@test.test', '123', '+7 (333) 333-32-32', 'male', '2024-03-02', 'freelanser', '/uploads/avatars/66016267f206d.jpg', 'Продвижение на Youtube', 'Соцсети');
-COMMIT;
