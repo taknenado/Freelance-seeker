@@ -1,5 +1,3 @@
-$("#phone").mask("+7 (999) 999-99-99");
-    
 function toggleProfileFields() {
     var profileFields = document.getElementById('profileFields');
     if (profileFields.style.display === 'none') {
@@ -21,7 +19,7 @@ const changeAvatarBtn = document.getElementById('changeAvatarBtn');
 const avatarModal = document.getElementById('avatarModal');
 const avatarInput = document.getElementById('avatarInput');
 const avatarPreview = document.getElementById('avatarPreview');
-const closeBtn = document.querySelector('.close-btn'); // Найти кнопку закрытия
+const closeBtn = document.querySelector('#close-btn'); // Найти кнопку закрытия
 
 changeAvatarBtn.addEventListener('click', function() {
   avatarModal.style.display = 'block';

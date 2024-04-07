@@ -82,21 +82,20 @@ if ($user_id) {
                         echo "<p class='username'>$username</p>";
                     echo "</div>";
                 echo "</div>";
-
                 echo '
                 <button id="changeAvatarBtn">Изменить фото профиля</button>
                 
                 <div id="avatarModal" class="modal">
-                <div class="modal-content">
-                  <h2>Выберите файл для обновления аватара</h2>
-                  <button class="close-modal">&times;</button> <!-- Кнопка закрытия -->
-                  <form action="update_avatar.php" method="post" enctype="multipart/form-data">
-                    <input type="file" name="avatar" id="avatarInput">
-                    <br>
-                    <button type="submit">Обновить аватар</button>
-                  </form>
-                  <div class="avatar-preview" id="avatarPreview"></div>
-                </div>
+                            <div class="modal-content">
+                            <h2>Выберите файл для обновления аватара</h2>
+                            <button id="close-btn" class="close-modal">&times;</button> <!-- Кнопка закрытия -->
+                                <form action="update_avatar.php" method="post" enctype="multipart/form-data">
+                                    <input type="file" name="avatar" id="avatarInput">
+                                    <br>
+                                    <button id="changeAvatarBtn" type="submit">Обновить аватар</button>
+                                </form>
+                        <div class="avatar-preview" id="avatarPreview"></div>
+                    </div>
                 </div>';
             echo "</div>";
         echo "</div>";
