@@ -100,7 +100,7 @@ if ($user_id) {
             echo "</div>";
         echo "</div>";
         echo "<br>";
-        echo "<p><a href='#' onclick='toggleProfileFields()'>Редактировать профиль</a></p>";
+        echo "<p><a href='#' onclick='toggleProfileFields()' class='edit-profile-link'>Редактировать профиль</a></p>";
         echo "<form action='save_profile.php' method='post'>";
             echo "<div id='profileFields' style='display: none;'>";
                 echo "<p><strong>Почта:</strong> $email</p>";
