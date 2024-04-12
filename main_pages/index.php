@@ -132,15 +132,15 @@
 <body>
 <header>
     <nav class="nav-menu">
-        <a href="index.php" class="logo">Your Logo</a>
+                <a href="index.php" class="logo">Your Logo</a>
             <ul class="nav-menu">
-                <li><a href="about.php">ЗАКАЗЫ</a></li>
+                <li><a href="orders.php">ЗАКАЗЫ</a></li>
                 <li><a href="freelansers.php">ФРИЛАНСЕРЫ</a></li>
                 <li><a href="contact.php">ПОРТФОЛИО</a></li>
                 <li><a href="contact.php">УСЛУГИ</a></li>
                 <li><a href="contact.php">ВАКАНСИИ</a></li>
                 
-            </ul> 
+            </ul>
             <ul>
                 <?php
                 session_start();
@@ -171,7 +171,7 @@
         </div>
         <div class="x24">Надежный и недорогой?</div>
         <div class="x25">Фрилансеры-частники со всей страны готовя взяться за ваше задание</div>
-        <form action="../orders/add_order.php" method="POST">
+        <form action="../orders/create_order.php" method="POST">
             <div class="centered-textarea text-right">
                 <textarea name="task_description" placeholder="Введите текст заказа"></textarea>
                 <p style="padding: 10px;">Создайте задание и уже сегодня получайте предложения от фрилансеров с ценой и сроками исполнения</p>

@@ -35,13 +35,13 @@ require_once('../includes/check_auth.php');
 <body>
     <header>
         <nav class="nav-menu">
-            <a href="../index.php" class="logo">Your Logo</a>
+            <a href="../main_pages/index.php" class="logo">Your Logo</a>
             <ul class="nav-menu">
-            <li><a href="../about.php">ЗАКАЗЫ</a></li>
-            <li><a href="../freelansers.php">ФРИЛАНСЕРЫ</a></li>
-            <li><a href="../contact.php">ПОРТФОЛИО</a></li>
-            <li><a href="../contact.php">УСЛУГИ</a></li>
-            <li><a href="../contact.php">ВАКАНСИИ</a></li>
+            <li><a href="../main_pages/orders.php">ЗАКАЗЫ</a></li>
+            <li><a href="../main_pages/freelansers.php">ФРИЛАНСЕРЫ</a></li>
+            <li><a href="../main_pages/contact.php">ПОРТФОЛИО</a></li>
+            <li><a href="../main_pages/contact.php">УСЛУГИ</a></li>
+            <li><a href="../main_pages/contact.php">ВАКАНСИИ</a></li>
             </ul> 
             <ul>   
             <li class="right-align"><a href="personal_info.php" class="button userinfo_button"><?php echo $_SESSION['username']; ?></a></li>

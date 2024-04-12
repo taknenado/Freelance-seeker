@@ -17,7 +17,7 @@
         <nav class="nav-menu">
             <a href="../main_pages/index.php" class="logo">Your Logo</a>
             <ul class="nav-menu">
-                <li><a href="../main_pages/about.php">ЗАКАЗЫ</a></li>
+                <li><a href="../main_pages/orders.php">ЗАКАЗЫ</a></li>
                 <li><a href="../main_pages/freelansers.php">ФРИЛАНСЕРЫ</a></li>
                 <li><a href="../main_pages/contact.php">ПОРТФОЛИО</a></li>
                 <li><a href="../main_pages/contact.php">УСЛУГИ</a></li>

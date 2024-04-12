@@ -173,7 +173,7 @@ while($row = mysqli_fetch_assoc($result)) {
         <nav class="nav-menu">
             <a href="index.php" class="logo">Your Logo</a>
             <ul class="nav-menu">
-            <li><a href="about.php">ЗАКАЗЫ</a></li>
+            <li><a href="orders.php">ЗАКАЗЫ</a></li>
             <li><a href="freelansers.php">ФРИЛАНСЕРЫ</a></li>
             <li><a href="contact.php">ПОРТФОЛИО</a></li>
             <li><a href="contact.php">УСЛУГИ</a></li>
@@ -194,7 +194,7 @@ while($row = mysqli_fetch_assoc($result)) {
                 } else {
                 ?>
                     <li><a href="login.php" class="button login-button">Войти</a></li>
-                    <li><a href="register.php" class="button register-button">Зарегестрироваться</a></li>
+                    <li><a href="registration/register.php" class="button register-button">Зарегестрироваться</a></li>
                 <?php
                 }
                 ?>
