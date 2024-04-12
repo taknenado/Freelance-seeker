@@ -1,6 +1,6 @@
 <?php
-require_once("DB_config.php");
-require_once("site_settings.php");
+require_once("config/DB_config.php");
+require_once("config/site_settings.php");
 
 // Варианты фильтрации пользователей
 $filters = array(

@@ -6,7 +6,7 @@ if(!isset($_SESSION['username']) && $_SERVER['SCRIPT_NAME'] != '/index.php') {
     exit(); 
 
 }
-require_once("../DB_config.php");
+require_once("../config/DB_config.php");
 require_once("../get_UserID.php");
 $professions = array(
   '0' => 'Выберите профессию',

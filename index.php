@@ -173,11 +173,11 @@
         <div class="x25">Фрилансеры-частники со всей страны готовя взяться за ваше задание</div>
         <form action="add_project.php" method="POST">
             <div class="centered-textarea text-right">
-                <textarea name="task_description" placeholder="Введите текст заявки"></textarea>
+                <textarea name="task_description" placeholder="Введите текст заказа"></textarea>
                 <p style="padding: 10px;">Создайте задание и уже сегодня получайте предложения от фрилансеров с ценой и сроками исполнения</p>
             </div>
             <div class="create-request-button">
-                <button type="submit" class="button">Создать заявку</button>
+                <button type="submit" class="button">Создать заказ</button>
             </div>
         </form>
     </div>

@@ -1,5 +1,5 @@
 <?php
-require_once("DB_config.php");
+require_once("config/DB_config.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];

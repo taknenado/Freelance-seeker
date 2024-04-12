@@ -1,5 +1,5 @@
 <?php
-require_once("DB_config.php"); 
+require_once("config/DB_config.php"); 
 // Запрос к базе данных для получения user_id
 $query = "SELECT user_id FROM users WHERE username = ?";
 $stmt = mysqli_prepare($connection, $query);

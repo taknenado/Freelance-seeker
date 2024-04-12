@@ -1,9 +1,9 @@
 <?php
 
 require_once '../check_auth.php'; 
-require_once '../DB_config.php';
+require_once '../config/DB_config.php';
 require_once '../get_UserID.php';
-require_once '../site_settings.php';
+require_once '../config/site_settings.php';
 const DEFAULT_AVATAR = 'http://localhost/Freelance-seeker/uploads/avatars/default-avatar.png';
 $user = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM users WHERE user_id = $user_id"));
 $previousAvatar = $user['avatar_path'];

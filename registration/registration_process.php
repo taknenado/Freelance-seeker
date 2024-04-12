@@ -8,7 +8,7 @@
 </body>
 </html>
 <?php
-require_once("../DB_config.php");
+require_once("../config/DB_config.php");
 
 $conn = new mysqli($hostname, $username, $password, $database);
 
