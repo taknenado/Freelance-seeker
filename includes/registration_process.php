@@ -8,7 +8,7 @@
 </body>
 </html>
 <?php
-require_once("../config/DB_config.php");
+require_once("../includes/DB_config.php");
 
 $conn = new mysqli($hostname, $username, $password, $database);
 
@@ -35,7 +35,7 @@ if ($conn->query($sql) === TRUE || $conn->query($sql) === FALSE) {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        header("Location: register.php?error=email_exists");
+        header("Location: ../main_pages/register.php?error=email_exists");
         $conn->close();
         exit();
     }
@@ -44,7 +44,7 @@ if ($conn->query($sql) === TRUE || $conn->query($sql) === FALSE) {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        header("Location: register.php?error=username_exists");
+        header("Location: ../main_pages/register.php?error=username_exists");
         $conn->close();
         exit();
     }
@@ -91,7 +91,7 @@ if ($conn->query($sql) === TRUE || $conn->query($sql) === FALSE) {
         <h1>РЕГИСТРАЦИЯ УСПЕШНА!</h1>
         <p>Поздравляем! Вы успешно зарегистрированы.</p>
         <p>Теперь вы можете войти на свою учетную запись.</p>
-        <form action='../index.php'>
+        <form action='../main_pages/index.php'>
         <div class='button-container'>
             <button type='submit'>Вернуться на главную страницу</button>
         </div>

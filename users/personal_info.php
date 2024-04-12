@@ -15,16 +15,16 @@
 <body>
     <header>
         <nav class="nav-menu">
-            <a href="../index.php" class="logo">Your Logo</a>
+            <a href="../main_pages/index.php" class="logo">Your Logo</a>
             <ul class="nav-menu">
-                <li><a href="about.php">ЗАКАЗЫ</a></li>
-                <li><a href="../freelansers.php">ФРИЛАНСЕРЫ</a></li>
-                <li><a href="contact.php">ПОРТФОЛИО</a></li>
-                <li><a href="contact.php">УСЛУГИ</a></li>
-                <li><a href="contact.php">ВАКАНСИИ</a></li>
+                <li><a href="../main_pages/about.php">ЗАКАЗЫ</a></li>
+                <li><a href="../main_pages/freelansers.php">ФРИЛАНСЕРЫ</a></li>
+                <li><a href="../main_pages/contact.php">ПОРТФОЛИО</a></li>
+                <li><a href="../main_pages/contact.php">УСЛУГИ</a></li>
+                <li><a href="../main_pages/contact.php">ВАКАНСИИ</a></li>
             </ul>
             <ul>
-                <li><a href="../logout.php" class="logout_button button-container">Выйти</a></li>
+                <li><a href="../includes/logout.php" class="logout_button button-container">Выйти</a></li>
 
             </ul>
         </nav>
@@ -34,14 +34,14 @@
 
 
 
-if (!isset($_SESSION['username']) && $_SERVER['SCRIPT_NAME'] != '/index.php') {
+if (!isset($_SESSION['username']) && $_SERVER['SCRIPT_NAME'] != '../main_pages/index.php') {
     header("Location: ../login.php");
     exit();
 }
 
-require_once("../config/DB_config.php");
-require_once("../get_UserID.php");
-require_once("../config/site_settings.php");
+require_once("../includes/DB_config.php");
+require_once("../includes/get_UserID.php");
+require_once("../includes/site_settings.php");
 
 $user_id = $_SESSION['user_id'] ?? null;
 

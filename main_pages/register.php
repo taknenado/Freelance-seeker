@@ -50,13 +50,9 @@
     </script>
 </head>
 <body>
-    <header>
-        <!-- Здесь может быть ваш заголовок или навигационное меню -->
-    </header>
-
     <main class="main">
         <div class="center">
-            <a href="../index.php" class="button button-container">На главную</a>
+            <a href="index.php" class="button button-container">На главную</a>
         </div>
         <h1>Регистрация</h1>
 
@@ -71,7 +67,7 @@
         }
         ?>
 
-        <form action="registration_process.php" method="POST" class="center">
+        <form action="../includes/registration_process.php" method="POST" class="center">
             <input type="text" id="username" name="username" required placeholder="Логин">
 
             <input type="email" id="email" name="email" required placeholder="Почта">
@@ -104,7 +100,7 @@
             </div>
         </form>
        <div class="center">
-            <p>Уже есть аккаунт? <a href="../login.php">Войти</a></p>
+            <p>Уже есть аккаунт? <a href="login.php">Войти</a></p>
         </div>
     </main>
 </body>

@@ -1,5 +1,5 @@
 <?php
-require_once('check_auth.php');
+require_once('../includes/check_auth.php');
 ?>
     <!DOCTYPE html>
     <html lang="ru">
@@ -8,26 +8,26 @@ require_once('check_auth.php');
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/nav_menu.css">
-        <link rel="stylesheet" href="css/test.css">
-        <link rel="stylesheet" href="css/test2.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/nav_menu.css">
+        <link rel="stylesheet" href="../css/test.css">
+        <link rel="stylesheet" href="../css/test2.css">
     </head>
 
     <body>
         <header>
             <nav class="nav-menu">
-                <a href="index.php" class="logo">Your Logo</a>
+                <a href="../index.php" class="logo">Your Logo</a>
                 <ul class="nav-menu">
-                    <li><a href="about.php">ЗАКАЗЫ</a></li>
-                    <li><a href="freelansers.php">ФРИЛАНСЕРЫ</a></li>
-                    <li><a href="contact.php">ПОРТФОЛИО</a></li>
-                    <li><a href="contact.php">УСЛУГИ</a></li>
-                    <li><a href="contact.php">ВАКАНСИИ</a></li>
+                    <li><a href="../about.php">ЗАКАЗЫ</a></li>
+                    <li><a href="../freelansers.php">ФРИЛАНСЕРЫ</a></li>
+                    <li><a href="../contact.php">ПОРТФОЛИО</a></li>
+                    <li><a href="../contact.php">УСЛУГИ</a></li>
+                    <li><a href="../contact.php">ВАКАНСИИ</a></li>
                 </ul>
                 <ul>
                     <li class="right-align">
-                        <a href="users/personal_info.php" class="button userinfo_button">
+                        <a href="../users/personal_info.php" class="button userinfo_button">
                             <?php echo $_SESSION['username']; ?>
                         </a>
                     </li>
@@ -44,7 +44,7 @@ require_once('check_auth.php');
 .jq-selectbox__select{ width: 338px !important; }
 #BDUGET .jq-selectbox__select{ width: 70px !important; }
 </style>
-<form action="add_project.php" method="POST" enctype="multipart/form-data">
+<form action="add_order.php" method="POST" enctype="multipart/form-data">
 <table  class="table table-striped table-bordered table-responsive">
 <tr>
 <td width="170">

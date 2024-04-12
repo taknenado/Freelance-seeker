@@ -65,7 +65,7 @@
             <li><a href="contact.php">ВАКАНСИИ</a></li>
         </ul> 
         <ul>   
-            <li><a href="logout.php" class="logout_button button-container">Выйти</a></li>
+            <li><a href="../includes/logout.php" class="logout_button button-container">Выйти</a></li>
             
         </ul>
     </nav>
@@ -80,8 +80,8 @@ if(!isset($_SESSION['username']) && $_SERVER['SCRIPT_NAME'] != '/index.php') {
     exit(); 
 
 }
-require_once("../config/DB_config.php");
-require_once("../get_UserID.php");
+require_once("../includes/DB_config.php");
+require_once("../includes/get_UserID.php");
 
 $user_id = $_SESSION['user_id'] ?? null;
 

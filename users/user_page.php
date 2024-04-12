@@ -1,5 +1,5 @@
 <?php
-require_once('check_auth.php');
+require_once('../includes/check_auth.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,8 +7,8 @@ require_once('check_auth.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница пользователя</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/nav_menu.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/nav_menu.css">
     
     <style>
     .button-container {
@@ -35,16 +35,16 @@ require_once('check_auth.php');
 <body>
     <header>
         <nav class="nav-menu">
-            <a href="index.php" class="logo">Your Logo</a>
+            <a href="../index.php" class="logo">Your Logo</a>
             <ul class="nav-menu">
-            <li><a href="about.php">ЗАКАЗЫ</a></li>
-            <li><a href="freelansers.php">ФРИЛАНСЕРЫ</a></li>
-            <li><a href="contact.php">ПОРТФОЛИО</a></li>
-            <li><a href="contact.php">УСЛУГИ</a></li>
-            <li><a href="contact.php">ВАКАНСИИ</a></li>
+            <li><a href="../about.php">ЗАКАЗЫ</a></li>
+            <li><a href="../freelansers.php">ФРИЛАНСЕРЫ</a></li>
+            <li><a href="../contact.php">ПОРТФОЛИО</a></li>
+            <li><a href="../contact.php">УСЛУГИ</a></li>
+            <li><a href="../contact.php">ВАКАНСИИ</a></li>
             </ul> 
             <ul>   
-            <li class="right-align"><a href="users/personal_info.php" class="button userinfo_button"><?php echo $_SESSION['username']; ?></a></li>
+            <li class="right-align"><a href="personal_info.php" class="button userinfo_button"><?php echo $_SESSION['username']; ?></a></li>
             </ul>
         </nav>
     </header>

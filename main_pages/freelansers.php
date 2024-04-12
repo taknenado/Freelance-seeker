@@ -1,6 +1,6 @@
 <?php
-require_once("config/DB_config.php");
-require_once("config/site_settings.php");
+require_once("../includes/DB_config.php");
+require_once("../includes/site_settings.php");
 
 // Варианты фильтрации пользователей
 $filters = array(
@@ -45,8 +45,8 @@ while($row = mysqli_fetch_assoc($result)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница пользователя</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/nav_menu.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/nav_menu.css">
     
 <style>
   .button-container {
@@ -186,7 +186,7 @@ while($row = mysqli_fetch_assoc($result)) {
                 if (isset($_SESSION['username'])) {
                 ?>
                     <li class="right-align">
-                        <a href="users/personal_info.php" class="button userinfo_button">
+                        <a href="../users/personal_info.php" class="button userinfo_button">
                         <?php echo $_SESSION['username']; ?>
                         </a>
                     </li>
@@ -194,7 +194,7 @@ while($row = mysqli_fetch_assoc($result)) {
                 } else {
                 ?>
                     <li><a href="login.php" class="button login-button">Войти</a></li>
-                    <li><a href="registration/register.php" class="button register-button">Зарегестрироваться</a></li>
+                    <li><a href="register.php" class="button register-button">Зарегестрироваться</a></li>
                 <?php
                 }
                 ?>
