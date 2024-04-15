@@ -125,13 +125,11 @@ require_once('../includes/check_auth.php');
                     <td width="170">Бюджет</td>
                     <td width="*" align="left">
                         <input type="text" name="budget" size="26" maxlength="8" class="input-txt only_numbers" style="width: 100%; max-width: 264px;" value="" />
-                        <span id="BDUGET" name="BDUGET">
                             <select name="currency">
-                                <option value="r">RUB</option>
-                                <option value="d">USD</option>
-                                <option value="e">EUR</option>
+                                <option value="RUB">RUB</option>
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
                             </select>
-                        </span>
                     </td>
                 </tr>
                 <tr>
