@@ -825,10 +825,10 @@ input[type="file"] {
 	margin-left: -10px;
 }
 
-.text_green {
+.text_blue {
 	font-family: 'OpenSansBold', Arial, Georgia;
 	font-size: 17px;
-	color: #719303;
+	color: #007bff;
 }
 
 .text_grey {

@@ -15,13 +15,13 @@ require_once('../includes/check_auth.php');
 <body>
     <header>
         <nav class="nav-menu">
-            <a href="../index.php" class="logo">Your Logo</a>
+            <a href="../main_pages/index.php" class="logo">Your Logo</a>
             <ul class="nav-menu">
-                <li><a href="../about.php">ЗАКАЗЫ</a></li>
-                <li><a href="../freelansers.php">ФРИЛАНСЕРЫ</a></li>
-                <li><a href="../contact.php">ПОРТФОЛИО</a></li>
-                <li><a href="../contact.php">УСЛУГИ</a></li>
-                <li><a href="../contact.php">ВАКАНСИИ</a></li>
+                <li><a href="../main_pages/orders.php">ЗАКАЗЫ</a></li>
+                <li><a href="../main_pages/freelansers.php">ФРИЛАНСЕРЫ</a></li>
+                <li><a href="../main_pages/contact.php">ПОРТФОЛИО</a></li>
+                <li><a href="../main_pages/contact.php">УСЛУГИ</a></li>
+                <li><a href="../main_pages/contact.php">ВАКАНСИИ</a></li>
             </ul>
             <ul>
                 <li class="right-align">
@@ -33,7 +33,7 @@ require_once('../includes/check_auth.php');
         </nav>
     </header>
     <h1>Добавление нового проекта</h1>
-    <span class="text_green">Поля, отмеченные <font class="error">*</font> - обязательны для заполнения</span>
+    <span class="text_blue">Поля, отмеченные <font class="error">*</font> - обязательны для заполнения</span>
     <br />
     <br />
     <span id="editors">
@@ -130,6 +130,12 @@ require_once('../includes/check_auth.php');
                                 <option value="USD">USD</option>
                                 <option value="EUR">EUR</option>
                             </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="170">Дата окончания <font class="error">*</font></td>
+                    <td width="*" align="left">
+                        <input required type="date" style="width: 100%; max-width: 650px;" name="end_date" class="input-txt" />
                     </td>
                 </tr>
                 <tr>

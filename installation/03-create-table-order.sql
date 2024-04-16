@@ -9,5 +9,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
     `proposal_title` VARCHAR(255),
     `company_name` VARCHAR(255),
     `proposal_description` TEXT,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `end_date` DATE,
     PRIMARY KEY (`order_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

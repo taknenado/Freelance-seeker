@@ -18,11 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
 
     $error = "invalid_credentials";
-    header("Location: ../login.php?error=$error");
+    header("Location: ../main_pages/login.php?error=$error");
     exit();
   }
 }
 
-header("Location: ../login.php");
+header("Location: ../main_pages/login.php");
 exit();
 ?>
