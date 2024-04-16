@@ -95,7 +95,7 @@ mysqli_close($connection);
         <table class="orders-table">
             <tbody>
                 <?php foreach ($orders as $order): ?>
-                    <tr class="order-row" onclick="window.location.href='../orders/order_details.php?id=<?php echo $order['order_id']; ?>'">
+                    <tr class="order-row" onclick="window.location.href='../orders/order_details.php?order_id=<?php echo $order['order_id']; ?>'">
                         <td>
                             <img src="../uploads/avatars/default-avatar.png" alt="avatar" class="avatar">
                         </td>
