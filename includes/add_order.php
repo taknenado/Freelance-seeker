@@ -22,8 +22,8 @@ if (isset($_SESSION['user_id'])) {
 if (empty($companyName) && isset($_SESSION['username'])) {
     $companyName = $_SESSION['username'];
 }
-$sql = "INSERT INTO orders (user_id, category, proposal_type, payment, budget, currency, proposal_title, company_name, proposal_description, end_date) 
-        VALUES ('$user_id', '$category', '$proposalType', '$payment', '$budget', '$currency', '$proposalTitle', '$companyName', '$proposalDescription', '$end_date')";
+$sql = "INSERT INTO orders (user_id, category, proposal_type, payment, budget, currency, proposal_title, company_name, proposal_description, created_at, end_date) 
+        VALUES ('$user_id', '$category', '$proposalType', '$payment', '$budget', '$currency', '$proposalTitle', '$companyName', '$proposalDescription', CURDATE(), '$end_date')";
 
 if (mysqli_query($connection, $sql)) {
     mysqli_close($connection);
