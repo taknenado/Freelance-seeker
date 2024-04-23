@@ -112,12 +112,12 @@ require_once('../includes/check_auth.php');
                     <td width="*" align="left" style="padding-bottom: 3px;" colspan="2">
                         <select required name="oplata">
                             <option></option>
-                            <option value="1">с банковской карты физлица</option>
-                            <option value="2">желательно безнал</option>
-                            <option value="3">только безнал</option>
-                            <option value="4">безопасная сделка</option>
-                            <option value="5">электронные деньги</option>
-                            <option value="6">наличные</option>
+                            <option value="с банковской карты физлица">с банковской карты физлица</option>
+                            <option value="желательно безнал">желательно безнал</option>
+                            <option value="только безнал">только безнал</option>
+                            <option value="безопасная сделка">безопасная сделка</option>
+                            <option value="электронные деньги">электронные деньги</option>
+                            <option value="наличные">наличные</option>
                         </select>
                     </td>
                 </tr>
