@@ -1,6 +1,10 @@
 <?php
 require_once("../includes/DB_config.php");
 
+// Получение ID текущего пользователя
+session_start();
+$current_user_id = $_SESSION['user_id'];
+
 // Поиск пользователей по никнейму
 if (isset($_POST['search'])) {
   $search = $_POST['search'];
@@ -98,8 +102,16 @@ if (isset($_POST['search'])) {
         </tr>
       </thead>
       <tbody id="user-list">
-        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+        <?php while ($row = mysqli_fetch_assoc($result)) { 
+          // Пропуск текущего пользователя
+          if ($row['user_id'] == $current_user_id) {
+            continue;
+          }
+        ?>
           <tr>
+                <td>
+                    <button onclick="confirmDelete('<?php echo $row['username']; ?>', '<?php echo $row['user_id']; ?>')">Удалить</button>
+                </td>
             <td><img class="user-avatar" src="..<?php echo $row['avatar_path']; ?>" alt="Аватар"></td>
             <td><?php echo $row['user_id']; ?></td>
             <td><?php echo $row['username']; ?></td>
@@ -116,5 +128,32 @@ if (isset($_POST['search'])) {
       </tbody>
     </table>
   </div>
+
+  <script>
+  function confirmDelete(username, userId) {
+    var confirmation = confirm("Вы уверены, что хотите удалить пользователя " + username + "?");
+
+    if (confirmation) {
+      // Если подтверждено, отправьте запрос на сервер для удаления пользователя
+      deleteUser(userId);
+    }
+  }
+
+  function deleteUser(userId) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // Обработка ответа после удаления пользователя
+        // Например, обновление списка пользователей или другие действия
+        // Может потребоваться перезагрузка страницы для обновления списка
+        location.reload();
+      }
+    };
+    xhr.open('POST', 'includes/delete_user.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send('user_id=' + userId);
+  }
+</script>
+
 </body>
 </html>
