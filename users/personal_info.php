@@ -1,3 +1,6 @@
+<?php
+ session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -9,9 +12,6 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/nav_menu.css">
 </head>
- <?php
- session_start();
- ?>
 <body>
     <header>
         <nav class="nav-menu">
@@ -24,9 +24,20 @@
                 <li><a href="../main_pages/contact.php">ВАКАНСИИ</a></li>
             </ul>
             <ul>
-                <li><a href="../includes/logout.php" class="logout_button button-container">Выйти</a></li>
-
-            </ul>
+    <?php
+    require_once("../includes/DB_config.php");
+    require_once("../includes/get_UserID.php");
+    require_once("../includes/site_settings.php");
+    $sql = "SELECT user_type FROM users WHERE user_id = '$user_id'";
+    $result = $connection->query($sql);
+        $row = $result->fetch_assoc();
+        $user_type = $row["user_type"];
+        if ($user_type === 'A') {
+            echo '<a href="../admin/all_users.php">Список пользователей</a>';
+        }
+    ?>
+    <li><a href="../includes/logout.php" class="logout_button button-container">Выйти</a></li>
+</ul>
         </nav>
     </header>
     <div class="left-space">
@@ -39,9 +50,7 @@ if (!isset($_SESSION['username']) && $_SERVER['SCRIPT_NAME'] != '../main_pages/i
     exit();
 }
 
-require_once("../includes/DB_config.php");
-require_once("../includes/get_UserID.php");
-require_once("../includes/site_settings.php");
+
 
 $user_id = $_SESSION['user_id'] ?? null;
 

@@ -91,8 +91,8 @@
 
             <label for="user_type">Тип пользователя:</label>
             <select id="user_type" name="user_type" required>
-                <option value="freelancer">Фрилансер</option>
-                <option value="employer">Работодатель</option>
+                <option value="F">Фрилансер</option>
+                <option value="E">Работодатель</option>
             </select>
 
             <div class="button-container">
