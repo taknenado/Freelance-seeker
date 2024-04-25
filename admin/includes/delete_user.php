@@ -10,11 +10,15 @@ if (isset($_POST['user_id'])) {
     echo "Невозможно удалить текущего пользователя.";
     exit;
   }
-  $query = "DELETE FROM users WHERE user_id = '$user_id'";
-  $result = mysqli_query($connection, $query);
 
-  if ($result) {
-    echo "Пользователь успешно удален.";
+  $order_query = "DELETE FROM orders WHERE user_id = '$user_id'";
+  $order_result = mysqli_query($connection, $order_query);
+
+  $user_query = "DELETE FROM users WHERE user_id = '$user_id'";
+  $user_result = mysqli_query($connection, $user_query);
+
+  if ($user_result && $order_result) {
+    echo "Пользователь удален.";
   } else {
     echo "Ошибка при удалении пользователя.";
   }
