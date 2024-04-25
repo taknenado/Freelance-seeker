@@ -24,7 +24,7 @@ $sql = "CREATE TABLE IF NOT EXISTS users (
     phone VARCHAR(20) NOT NULL,
     gender ENUM('male', 'female') NOT NULL,
     birthdate DATE NOT NULL,
-    user_type ENUM('freelanser', 'employer') NOT NULL
+    user_type ENUM('F', 'E', 'A') NOT NULL
 )";
 
 if ($conn->query($sql) === TRUE || $conn->query($sql) === FALSE) {
@@ -53,7 +53,7 @@ if ($conn->query($sql) === TRUE || $conn->query($sql) === FALSE) {
     $phone = $_POST['phone'];
     $gender = $_POST['gender'];
     $birthdate = $_POST['birthdate'];
-    $user_type = 'freelanser';
+    $user_type = $_POST['user_type'];
 
     $stmt = $conn->prepare("INSERT INTO users (username, email, password, phone, gender, birthdate, user_type) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("sssssss", $username, $email, $password, $phone, $gender, $birthdate, $user_type);

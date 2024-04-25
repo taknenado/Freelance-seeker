@@ -11,7 +11,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     $orders[] = $row;
 }
 
-mysqli_close($connection);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -161,9 +160,21 @@ mysqli_close($connection);
         </ul>
     </nav>
 </header>
-<div class="create-project-button">
-    <a href="../orders/create_order.php" class="button">Создать проект</a>
-</div>
+<?php
+    require_once("../includes/get_UserID.php");
+    $sql = "SELECT user_type FROM users WHERE user_id = '$user_id'";
+    $result = $connection->query($sql);
+        $row = $result->fetch_assoc();
+        $user_type = $row["user_type"];
+        if ($user_type === 'E' or $user_type === 'A') {
+            echo '
+            <div class="create-project-button">
+                <a href="../orders/create_order.php" class="button">Создать проект</a>
+            </div>
+            ';
+        }
+        
+    ?>
 
 <?php if (!empty($orders)): ?>
     <div class="orders-container">
