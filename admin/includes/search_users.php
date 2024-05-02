@@ -1,14 +1,17 @@
 <?php
 require_once("../../includes/DB_config.php");
 
+session_start();
+$current_user_id = $_SESSION['user_id'];
+
 // Поиск пользователей по никнейму
 if (isset($_POST['search'])) {
   $search = $_POST['search'];
 
-  $query = "SELECT * FROM users WHERE username LIKE '%$search%'";
+  $query = "SELECT * FROM users WHERE username LIKE '%$search%' AND user_id != '$current_user_id'";
   $result = mysqli_query($connection, $query);
 } else {
-  $query = "SELECT * FROM users";
+  $query = "SELECT * FROM users WHERE user_id != '$current_user_id'";
   $result = mysqli_query($connection, $query);
 }
 
