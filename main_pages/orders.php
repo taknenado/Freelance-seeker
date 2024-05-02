@@ -1,4 +1,5 @@
 <?php
+require_once("../includes/check_auth.php");
 require_once("../includes/DB_config.php");
 
 $sql = "SELECT orders.*, users.avatar_path 
@@ -140,7 +141,6 @@ while ($row = mysqli_fetch_assoc($result)) {
         </ul>
         <ul>
             <?php
-            session_start();
             if (isset($_SESSION['username'])) {
             ?>
                 <li class="right-align">
