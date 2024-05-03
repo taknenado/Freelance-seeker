@@ -115,7 +115,7 @@ if ($user_id) {
                 echo "<p><strong>Почта:</strong> $email</p>";
                 echo "<input type='text' id='phone' name='phone' placeholder='+7 (___) ___-__-__' value='$phone'>";
                 echo "<p><strong>Пол:</strong> $gender</p>";
-                echo "<p><strong>Тип пользователя:</strong> $user_type</p>";
+                
             echo "<div style='display: flex;'>";
                 echo "<div style='margin-right: 20px;'>";
                 echo "<p><strong>Профессия:</strong></p>";
