@@ -18,6 +18,7 @@ if (isset($_POST['search'])) {
 $html = '';
 while ($row = mysqli_fetch_assoc($result)) {
   $html .= '<tr>';
+  $html .= '<td><button onclick="confirmDelete(\'' . $row['username'] . '\', \'' . $row['user_id'] . '\')">Удалить</button></td>';
   $html .= '<td><img class="user-avatar" src="..' . $row['avatar_path'] . '" alt="Аватар"></td>';
   $html .= '<td>' . $row['user_id'] . '</td>';
   $html .= '<td>' . $row['username'] . '</td>';
@@ -32,6 +33,5 @@ while ($row = mysqli_fetch_assoc($result)) {
   $html .= '</tr>';
 }
 
-// Отправка ответа в формате HTML
 echo $html;
 ?>

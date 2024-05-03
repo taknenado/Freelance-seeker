@@ -1,11 +1,9 @@
 <?php
 require_once("../includes/DB_config.php");
 
-// Получение ID текущего пользователя
 session_start();
 $current_user_id = $_SESSION['user_id'];
 
-// Поиск пользователей по никнейму
 if (isset($_POST['search'])) {
   $search = $_POST['search'];
 
@@ -88,6 +86,7 @@ if (isset($_POST['search'])) {
     <table>
       <thead>
         <tr>
+          <th>Действие</th>
           <th>Аватар</th>
           <th>ID</th>
           <th>Имя пользователя</th>
@@ -134,7 +133,6 @@ if (isset($_POST['search'])) {
     var confirmation = confirm("Вы уверены, что хотите удалить пользователя " + username + "?");
 
     if (confirmation) {
-      // Если подтверждено, отправьте запрос на сервер для удаления пользователя
       deleteUser(userId);
     }
   }
@@ -143,9 +141,6 @@ if (isset($_POST['search'])) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
-        // Обработка ответа после удаления пользователя
-        // Например, обновление списка пользователей или другие действия
-        // Может потребоваться перезагрузка страницы для обновления списка
         location.reload();
       }
     };

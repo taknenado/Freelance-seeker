@@ -33,7 +33,7 @@
         $row = $result->fetch_assoc();
         $user_type = $row["user_type"];
         if ($user_type === 'A') {
-            echo '<a href="../admin/all_users.php">Список пользователей</a>';
+            echo '<a href="../admin/all_users.php">Панель администратора</a>';
         }
     ?>
     <li><a href="../includes/logout.php" class="logout_button button-container">Выйти</a></li>

@@ -56,7 +56,6 @@ if($previousAvatar && $previousAvatar !== DEFAULT_AVATAR) {
     
   }
 }
-// Делаем редирект обратно
 header('Location: personal_info.php?avatar_updated');
 
   echo json_encode($response);
