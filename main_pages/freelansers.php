@@ -214,7 +214,7 @@ while($row = mysqli_fetch_assoc($result)) {
                 <?php endforeach; ?>
             </select>
         </div>
-        <div class="form-group"> <!-- Новый контейнер для кнопки -->
+        <div class="form-group">
             <button type="submit" class="btn">Применить</button>
         </div>
     </form>
