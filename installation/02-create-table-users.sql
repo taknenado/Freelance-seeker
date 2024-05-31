@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_type` enum('F','E','A') NOT NULL,
   `avatar_path` varchar(255) DEFAULT '/uploads/avatars/default-avatar.png',
   `specialization` varchar(255) DEFAULT NULL,
-  `profession` varchar(255) DEFAULT NULL
+  `profession` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
